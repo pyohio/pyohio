@@ -2,7 +2,7 @@ from django import forms
 
 from markitup.widgets import MarkItUpWidget
 
-from symposion_project.proposals.models import TalkProposal, TutorialProposal, PosterProposal
+from pyohio.proposals.models import TalkProposal, TutorialProposal, PosterProposal
 
 
 class ProposalForm(forms.ModelForm):

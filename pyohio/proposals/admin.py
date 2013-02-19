@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from symposion_project.proposals.models import TalkProposal, TutorialProposal, PosterProposal
+from pyohio.proposals.models import TalkProposal, TutorialProposal, PosterProposal
 
 
 admin.site.register(TalkProposal)
