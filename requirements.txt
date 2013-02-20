@@ -29,3 +29,4 @@ easy-thumbnails==1.2
 
 psycopg2==2.4.6
 gunicorn==0.17.2
+gondor==1.2.1

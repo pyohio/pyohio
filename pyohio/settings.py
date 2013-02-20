@@ -181,8 +181,8 @@ ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_EMAIL_AUTHENTICATION = False
 ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = False
 
-ACCOUNT_SIGNUP_REDIRECT_URL = "dashboard"
-ACCOUNT_LOGIN_REDIRECT_URL = "dashboard"
+ACCOUNT_SIGNUP_REDIRECT_URL = "home"
+ACCOUNT_LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 ACCOUNT_USER_DISPLAY = lambda user: user.email
 
@@ -214,7 +214,6 @@ SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 PROPOSAL_FORMS = {
     "tutorial": "pyohio.proposals.forms.TutorialProposalForm",
     "talk": "pyohio.proposals.forms.TalkProposalForm",
-    "poster": "pyohio.proposals.forms.PosterProposalForm",
 }
 
 # local_settings.py can be used to override environment-specific settings
