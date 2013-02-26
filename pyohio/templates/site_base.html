@@ -96,11 +96,11 @@
                 </div>
             </div>
         {% endblock %}
+        
+        {% block footer %}
+            {% include "_footer.html" %}
+        {% endblock %}
     </div>
-{% endblock %}
-
-{% block footer %}
-    {% include "_footer.html" %}
 {% endblock %}
 
 {% block script_base %}
