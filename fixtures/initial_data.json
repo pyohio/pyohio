@@ -4,6 +4,22 @@
         "model": "sites.site", 
         "fields": {
             "domain": "localhost",
+            "name": "PyOhio [local]"
+        }
+    },
+    {
+        "pk": 2, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "lc911.o1.gondor.io",
+            "name": "PyOhio [dev]"
+        }
+    },
+    {
+        "pk": 3, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "oz509.o1.gondor.io",
             "name": "PyOhio"
         }
     }
