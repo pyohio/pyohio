@@ -38,14 +38,5 @@
             "name": "talk", 
             "slug": "talk"
         }
-    }, 
-    {
-        "pk": 3, 
-        "model": "proposals.proposalkind", 
-        "fields": {
-            "section": 2, 
-            "name": "poster", 
-            "slug": "poster"
-        }
     }
 ]

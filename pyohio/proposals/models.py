@@ -34,8 +34,3 @@ class TalkProposal(Proposal):
 class TutorialProposal(Proposal):
     class Meta:
         verbose_name = "tutorial proposal"
-
-
-class PosterProposal(Proposal):
-    class Meta:
-        verbose_name = "poster proposal"

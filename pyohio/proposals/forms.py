@@ -2,7 +2,7 @@ from django import forms
 
 from markitup.widgets import MarkItUpWidget
 
-from pyohio.proposals.models import TalkProposal, TutorialProposal, PosterProposal
+from pyohio.proposals.models import TalkProposal, TutorialProposal
 
 
 class ProposalForm(forms.ModelForm):
@@ -45,26 +45,6 @@ class TutorialProposalForm(ProposalForm):
             "abstract",
             "additional_notes",
             "recording_release",
-
-        ]
-        widgets = {
-            "abstract": MarkItUpWidget(),
-            "additional_notes": MarkItUpWidget(),
-        }
-
-
-class PosterProposalForm(ProposalForm):
-
-    class Meta:
-        model = PosterProposal
-        fields = [
-            "title",
-            "audience_level",
-            "description",
-            "abstract",
-            "additional_notes",
-            "recording_release",
-
         ]
         widgets = {
             "abstract": MarkItUpWidget(),
