@@ -1,1 +1,77 @@
-// Place your custom less overrides in this file
+// body {
+//     background: url(../../images/background.jpg) top center repeat fixed #700206;
+// }
+
+div.span9, div.span3 {
+    background: #efefef;
+}
+
+html {
+    background: url(../../images/background.jpg) top center repeat fixed #700206;
+}
+
+body {
+    padding-top: 80px;
+    position: relative;
+    background-color: transparent;
+}
+
+a.brand {
+    background-image: url(../../images/small-logo.png);
+    background-repeat: no-repeat;
+    // width: 42px;
+    // height: 42px;
+    text-indent: -10000px;
+    padding: 10px 0 0 0;
+}
+
+header {
+    text-align: center;
+    
+    // h1 {
+    //     text-indent: -999999px;
+    //     background-image: url(../../images/pyohiologo.png);
+    //     background-repeat: no-repeat;
+    //     height: 175px;
+    //     width: 788px;
+    // }
+}
+
+
+header h1 {
+    background: transparent url(../../images/pyohiologo.png) no-repeat scroll 0% 0%;
+    width: 640px;
+    height: 124px;
+    text-indent: -3333px;
+    border: 0;
+    margin: 0 auto;
+}
+
+header h1 a {
+    display: block;
+    width: 640px;
+    height: 124px;
+    text-decoration: none;
+    border: 0;
+}
+
+footer {
+    color: #fffff;
+}
+
+
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+    
+    a.brand {
+        background-image: url(../../images/small-logo@2x.png);
+        background-size: 42px 42px;
+    }
+    
+    header h1 {
+        background: transparent url(../../images/pyohiologo@2x.png) no-repeat scroll 0% 0%;
+        background-size: 640px 124px;
+    }
+    
+}

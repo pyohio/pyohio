@@ -9,6 +9,7 @@
 {% block viewport %}{% endblock %}
 
 {% block style_base %}
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href="{% static "symposion/css/symposion.css" %}" rel="stylesheet">
     {% block extra_style %}{% endblock %}
 {% endblock %}
@@ -20,63 +21,25 @@
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
-{% block topbar_base %}
-    <div class="container">
-        <header id="masthead">
-            <div class="pull-right">
-                <ul class="nav nav-pills">
-                    {% if not request.user.is_authenticated %}
-                        <li>
-                            <a href="{% url account_login %}">Log in</a>
-                        </li>
-                        <li>
-                            <a href="{% url account_signup %}">Sign up</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url dashboard %}">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="{% url account_settings %}">Settings</a>
-                        </li>
-                        {% if request.user.is_staff %}
-                            <li>
-                                <a href="{% url admin:index %}">Admin</a>
-                            </li>
-                        {% endif %}
-                        <li>
-                            <a id="logout_link" href="{% url account_logout %}" data-form-submit="#account_logout_form">Log out</a>
-                        </li>
-                        <form id="account_logout_form" class="hide" action="{% url account_logout %}" method="post">{% csrf_token %}</form>
-                    {% endif %}
-                </ul>
-            </div>
-            
-            <h1><a href="{% url home %}">{{ SITE_NAME }}</a></h1>
-            <h2 style="font-weight: 200;"><a href="{% url home %}">Saturday, July 27 &amp; Sunday, July 28, 2013</h2>
-            <h3><a href="{% url home %}">Columbus, Ohio</a></h2>
-        </header>
-        <div class="navbar">
-            <div class="navbar-inner">
-                {% block topbar %}
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <div class="nav-collapse">
-                        {% block nav %}
-                            {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap.html" %}
-                        {% endblock %}
-                    </div>
-                {% endblock %}
-            </div>
-        </div>
-    </div>
+{% block wrapper_class %}outer-container{% endblock %}
+
+{% block site_brand %}
+    <a class="brand" href="{% url home %}">{{ SITE_NAME }}</a>
+{% endblock %}
+
+{% block navbar_class %}navbar-fixed-top navbar-inverse{% endblock %}
+
+{% block nav %}
+    {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap.html" %}
 {% endblock %}
 
 {% block body_base %}
     <div class="container">
+        
+        <header>
+            <h1><a href="#">PyOhio 2013</a></h1>
+        </header>
+        
         {% include "_messages.html" %}
         
         {# {% block breadcrumbs %} #}
