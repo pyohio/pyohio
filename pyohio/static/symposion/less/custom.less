@@ -63,6 +63,27 @@ header h1 a {
     }
 }
 
+.box {
+  border:1px solid #d2d2cb;
+  .box-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+  .border-radius(4px);
+  padding:1px;
+  background: #efefef;
+  position:relative;
+  margin-bottom:20px;
+
+  .box-content {
+    border:3px solid #e7e7e3;
+    padding:15px;
+    overflow:hidden;
+
+    h1 {
+      font-weight:normal;
+      margin-bottom:10px;
+    }
+  }
+}
+
 
 @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
