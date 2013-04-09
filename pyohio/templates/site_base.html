@@ -49,13 +49,21 @@
         {% block body_outer %}
             <div class="row">
                 <div class="span9">
-                    {% block body %}
-                    {% endblock %}
+                    <div class="box">
+                        <div class="box-content">
+                            {% block body %}
+                            {% endblock %}
+                        </div>
+                    </div>
                 </div>
                 <div class="span3">
-                    {% block sidebar %}
-                        {% include "_default_sidebar.html" %}
-                    {% endblock %}
+                    <div class="box">
+                        <div class="box-content">
+                            {% block sidebar %}
+                                {% include "_default_sidebar.html" %}
+                            {% endblock %}
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endblock %}
