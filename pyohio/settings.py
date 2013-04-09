@@ -120,6 +120,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.contrib.messages.context_processors.messages",
     "pinax_utils.context_processors.settings",
     "pinax_theme_bootstrap.context_processors.theme",
+    "account.context_processors.account",
     "symposion.reviews.context_processors.reviews",
 ]
 
