@@ -2,10 +2,6 @@
 //     background: url(../../images/background.jpg) top center repeat fixed #700206;
 // }
 
-div.span9, div.span3 {
-    background: #efefef;
-}
-
 html {
     background: url(../../images/background.jpg) top center repeat fixed #700206;
 }
@@ -14,6 +10,15 @@ body {
     padding-top: 80px;
     position: relative;
     background-color: transparent;
+    color: #efefef;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #dedede;
+  small {
+    color: #cecece;
+  }
 }
 
 a.brand {
@@ -66,14 +71,21 @@ header h1 a {
 .box {
   border:1px solid #d2d2cb;
   .box-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
-  .border-radius(4px);
+  .border-radius(2px);
   padding:1px;
   background: #efefef;
   position:relative;
   margin-bottom:20px;
+  color: @textColor;
+  
+  h1, h2, h3, h4, h5, h6 {
+      color: @headingsColor;
+      small {
+        color: @grayLight;
+      }
+  }
 
   .box-content {
-    border:3px solid #e7e7e3;
     padding:15px;
     overflow:hidden;
 
