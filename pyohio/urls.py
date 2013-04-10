@@ -19,6 +19,10 @@ urlpatterns = patterns("",
     }, name="home"),
     url(r"^admin/", include(admin.site.urls)),
     
+    url(r"^registration/$", direct_to_template, {
+        "template": "registration.html",
+    }, name="registration"),
+    
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
     url(r"^account/", include("account.urls")),
