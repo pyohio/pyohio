@@ -3,6 +3,8 @@ import urlparse
 
 from .settings import *
 
+DEBUG = {"dev": True}.get(os.environ["GONDOR_INSTANCE"], False)
+
 if "GONDOR_DATABASE_URL" in os.environ:
     urlparse.uses_netloc.append("postgres")
     url = urlparse.urlparse(os.environ["GONDOR_DATABASE_URL"])
