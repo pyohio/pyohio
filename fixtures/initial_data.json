@@ -19,7 +19,7 @@
         "pk": 3, 
         "model": "sites.site", 
         "fields": {
-            "domain": "oz509.o1.gondor.io",
+            "domain": "pyohio.org",
             "name": "PyOhio"
         }
     }
