@@ -41,26 +41,15 @@ h1, h2, h3, h4, h5, h6 {
 
 a.brand {
     background-image: url(../../images/small-logo.png);
+    background-size: 42px 42px;
     background-repeat: no-repeat;
     width: 0px;
     text-indent: -10000px;
     padding: 10px 0 0 0;
 }
 
-header {
-    text-align: center;
-    
-    // h1 {
-    //     text-indent: -999999px;
-    //     background-image: url(../../images/pyohiologo.png);
-    //     background-repeat: no-repeat;
-    //     height: 175px;
-    //     width: 788px;
-    // }
-}
 
-
-header h1 {
+header h1.logo {
     background: transparent url(../../images/pyohiologo-text.png) no-repeat scroll 0% 0%;
     width: 418px;
     height: 81px;
@@ -69,7 +58,7 @@ header h1 {
     border: 0;
 }
 
-header h1 a {
+header h1.logo a {
     display: block;
     width: 418px;
     height: 81px;
@@ -113,18 +102,14 @@ header h1 a {
   }
 }
 
-
 @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min-device-pixel-ratio: 2) {
-    
-    a.brand {
-        background-image: url(../../images/small-logo@2x.png);
-        background-size: 42px 42px;
-    }
-    
-    header h1 {
-        background: transparent url(../../images/pyohiologo-text@2x.png) no-repeat scroll 0% 0%;
-    }
-    
-}
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+      a.brand {
+          background-image: url(../../images/small-logo@2x.png);
+      }
+      
+      header h1.logo {
+          background-image: url(../../images/pyohiologo-text@2x.png);
+      }
+  }
