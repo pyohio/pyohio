@@ -3,6 +3,7 @@ from django import forms
 from markitup.widgets import MarkItUpWidget
 
 from pyohio.proposals.models import TalkProposal, TutorialProposal
+from pyohio.proposals.models import OpenSpaceProposal
 
 
 class ProposalForm(forms.ModelForm):
@@ -14,6 +15,22 @@ class ProposalForm(forms.ModelForm):
                 u"The description must be less than 400 characters"
             )
         return value
+
+
+class OpenSpaceProposalForm(ProposalForm):
+
+    class Meta:
+        model = OpenSpaceProposal
+        fields = [
+            "title",
+            "description",
+            "abstract",
+            "additional_notes",
+        ]
+        widgets = {
+            "abstract": MarkItUpWidget(),
+            "additional_notes": MarkItUpWidget(),
+        }
 
 
 class TalkProposalForm(ProposalForm):

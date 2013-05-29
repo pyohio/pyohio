@@ -24,6 +24,9 @@ class Proposal(ProposalBase):
     
     class Meta:
         abstract = True
+    
+    def __unicode__(self):
+        return u"%s" % self.title
 
 
 class TalkProposal(Proposal):
@@ -34,3 +37,11 @@ class TalkProposal(Proposal):
 class TutorialProposal(Proposal):
     class Meta:
         verbose_name = "tutorial proposal"
+
+
+class OpenSpaceProposal(ProposalBase):
+    class Meta:
+        verbose_name = "open space proposal"
+    
+    def __unicode__(self):
+        return u"%s" % self.title
