@@ -30,10 +30,12 @@ table.calendar {
     &.slot {
       font-weight: bold;
       text-shadow: #fff 0px 1px 0px;
+      background-color: #FFFFDA;
       
       // Customize for slot types per site
-      &.slot-break { background-color: #ECFFFF; }
-      &.slot-plenary { background-color: lighten(#DCDCFF, 3%); }
+      &.slot-break, &.slot-lunch { background-color: #ECFFFF; }
+      &.slot-plenary { background-color: lighten(#DCDCFF, 5%); }
+      &.slot-lightning { background-color: darken(#FFFFDA, 5%); }
       p {
         padding: 0;
         margin: 0;
