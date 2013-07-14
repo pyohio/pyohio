@@ -8,6 +8,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 import symposion.views
+import pyohio.views
 
 # from pinax.apps.account.openid_consumer import PinaxConsumer
 
@@ -26,6 +27,8 @@ urlpatterns = patterns("",
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
     url(r"^account/", include("account.urls")),
+
+    url(r"^schedule/json/$", pyohio.views.schedule_json, name="schedule_json"),
     
     url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
     url(r"^speaker/", include("symposion.speakers.urls")),
