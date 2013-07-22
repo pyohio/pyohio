@@ -35,7 +35,7 @@ def schedule_json(request):
                 "duration": duration(slot.start, slot.end),
                 "authors": [s.name for s in slot.content.speakers()],
                 "license": "",
-                "contact": [s.email for s in slot.content.speakers()],
+                "contact": [s.email for s in slot.content.speakers()] if request.user.is_staff else ["redacted"],
                 "abstract": slot.content.abstract.raw,
                 "description": slot.content.description.raw,
                 "conf_key": slot.pk,
