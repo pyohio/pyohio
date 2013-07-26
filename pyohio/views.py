@@ -25,7 +25,6 @@ def schedule_json(request):
     slots = Slot.objects.all().order_by("start")
     data = []
     for slot in slots:
-        print slot.kind
         if slot.kind.label in ["talk", "tutorial", "plenary"] and slot.content and slot.content.proposal.kind.slug in ["talk", "tutorial"]:
             slot_data = {
                 "name": slot.content.title,
