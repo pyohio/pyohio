@@ -48,6 +48,24 @@ def schedule_json(request):
                     "kind": slot.content.proposal.kind.slug,
                     "tags": "",
                 }
+        elif slot.kind.label == "lightning":
+            slot_data = {
+                "name": slot.content_override.raw if slot.content_override else "Lightning Talks",
+                "room": ", ".join(room["name"] for room in slot.rooms.values()),
+                "start": datetime.combine(slot.day.date, slot.start).isoformat(),
+                "end": datetime.combine(slot.day.date, slot.end).isoformat(),
+                "duration": duration(slot.start, slot.end),
+                "authors": None,
+                "released": True,
+                "license": "",
+                "contact": None,
+                "abstract": "Lightning Talks",
+                "description": "Lightning Talks",
+                "conf_key": slot.pk,
+                "conf_url": None,
+                "kind": slot.kind.label,
+                "tags": "",
+            }
         else:
             continue
         data.append(slot_data)
