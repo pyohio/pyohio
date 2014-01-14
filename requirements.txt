@@ -9,7 +9,7 @@
 
 Django==1.4.5
 django-user-accounts==1.0b8
-symposion==1.0b1
+-e git://github.com/pyohio/symposion.git#egg=symposion
 pinax-theme-bootstrap==3.0a4
 metron==0.1 # 0.2.dev3
 pinax-utils==1.0b1.dev3
