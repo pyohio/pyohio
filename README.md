@@ -1,6 +1,6 @@
-# PyOhio 2013
+# PyOhio 2014
 
-Conference website for PyOhio 2013, built on Symposion.
+Conference website for PyOhio 2014, built on Symposion.
 
 ## Quickstart
 
@@ -11,5 +11,3 @@ Conference website for PyOhio 2013, built on Symposion.
 ## Todo
 
 - Deployment
-- Update theme to match PyOhio branding
-- Update proposal models and fixtures to match PyOhio proposal types
