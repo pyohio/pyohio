@@ -140,6 +140,7 @@ INSTALLED_APPS = [
     "django_forms_bootstrap",
 
     # external
+    "south",
     "debug_toolbar",
     "mailer",
     "timezones",

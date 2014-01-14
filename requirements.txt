@@ -8,6 +8,7 @@
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
 
 Django==1.4.5
+South==0.8.4
 django-user-accounts==1.0b8
 -e git://github.com/pyohio/symposion.git#egg=symposion
 pinax-theme-bootstrap==3.0a4
