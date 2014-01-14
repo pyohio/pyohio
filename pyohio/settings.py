@@ -26,7 +26,7 @@ MANAGERS = ADMINS
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "pyohio-2013",                       # Or path to database file if using sqlite3.
+        "NAME": "pyohio-2014",                       # Or path to database file if using sqlite3.
         "USER": "",                             # Not used with sqlite3.
         "PASSWORD": "",                         # Not used with sqlite3.
         "HOST": "",                             # Set to empty string for localhost. Not used with sqlite3.
@@ -134,11 +134,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-    
+
     # theme
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
-    
+
     # external
     "debug_toolbar",
     "mailer",
@@ -150,7 +150,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
-    
+
     # symposion
     "symposion",
     "symposion.sponsorship",
@@ -162,7 +162,7 @@ INSTALLED_APPS = [
     "symposion.teams",
     "symposion.reviews",
     "symposion.schedule",
-    
+
     # project
     "pyohio.proposals",
 ]
@@ -190,7 +190,7 @@ ACCOUNT_USER_DISPLAY = lambda user: user.email
 AUTHENTICATION_BACKENDS = [
     # Permissions Backends
     "symposion.teams.backends.TeamPermissionsBackend",
-    
+
     # Auth backends
     "account.auth_backends.EmailAuthenticationBackend",
 ]
@@ -218,7 +218,7 @@ PROPOSAL_FORMS = {
     "open-space": "pyohio.proposals.forms.OpenSpaceProposalForm",
 }
 
-SESSION_COOKIE_NAME = "PYOHIO2013"
+SESSION_COOKIE_NAME = "PYOHIO2014"
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.

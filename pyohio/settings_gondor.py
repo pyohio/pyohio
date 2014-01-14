@@ -73,7 +73,7 @@ LOGGING = {
     }
 }
 
-DEFAULT_FROM_EMAIL = "PyOhio 2013 <no-reply@pyohio.org>"
+DEFAULT_FROM_EMAIL = "PyOhio 2014 <no-reply@pyohio.org>"
 
 if "GONDOR_SENDGRID_USER" in os.environ:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
