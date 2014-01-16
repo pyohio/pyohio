@@ -155,6 +155,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
+    "model_utils",
 
     # symposion
     "symposion",
