@@ -9,24 +9,14 @@
 
 Django==1.4.5
 South==0.8.4
-django-user-accounts==1.0b8
 -e git://github.com/pyohio/symposion.git#egg=symposion
 pinax-theme-bootstrap==3.0a4
 metron==0.1 # 0.2.dev3
 pinax-utils==1.0b1.dev3
 django-mailer==0.2a1
-django-timezones==0.2
 pytz==2012g
-django-model-utils==1.1.0
 
-django-taggit==0.9.3
-django-reversion==1.6.5
-django-markitup==1.0.0
-markdown==2.2.1
-django-sitetree==0.9.2
 PIL==1.1.7
-easy-thumbnails==1.2
-html5lib==0.95
 
 django-redis-cache==0.9.7
 redis==2.7.2
