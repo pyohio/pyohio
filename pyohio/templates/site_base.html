@@ -1,5 +1,8 @@
 {% extends "symposion_sidebar_base.html" %}
 
+{% load url from future %}
+
+
 {% load metron_tags %}
 {% load i18n %}
 {% load sitetree %}
@@ -24,7 +27,7 @@
 {% block wrapper_class %}outer-container{% endblock %}
 
 {% block site_brand %}
-    <a class="brand" href="{% url home %}">{{ SITE_NAME }}</a>
+    <a class="brand" href="{% url 'home' %}">{{ SITE_NAME }}</a>
 {% endblock %}
 
 {% block navbar_class %}navbar-fixed-top navbar-inverse{% endblock %}
@@ -37,7 +40,7 @@
     <div class="container">
         
         <header>
-            <h1 class="logo"><a href="{% url home %}" title="PyOhio 2013">PyOhio 2013</a></h1>
+            <h1 class="logo"><a href="{% url 'home' %}" title="PyOhio 2013">PyOhio 2013</a></h1>
         </header>
         
         {% include "_messages.html" %}
