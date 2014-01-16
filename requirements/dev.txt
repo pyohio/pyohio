@@ -1,4 +1,5 @@
-# requirements for development of `pycon`
+# typical requirements for development work on this project
+
 -r base.txt
 
 django-debug-toolbar==1.0
