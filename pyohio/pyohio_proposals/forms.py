@@ -2,9 +2,7 @@ from django import forms
 
 from markitup.widgets import MarkItUpWidget
 
-from .pyohio_proposals.models import (OpenSpaceProposal, TalkProposal,
-    TutorialProposal)
-
+from .models import OpenSpaceProposal, TalkProposal, TutorialProposal
 
 
 class ProposalForm(forms.ModelForm):

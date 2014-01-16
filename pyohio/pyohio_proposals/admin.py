@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import (OpenSpaceProposal, TalkProposal,
-    TutorialProposal)
+from .models import OpenSpaceProposal, TalkProposal, TutorialProposal
 
 
 admin.site.register(OpenSpaceProposal)
