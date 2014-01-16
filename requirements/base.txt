@@ -7,21 +7,21 @@
 --extra-index-url=http://dist.pinaxproject.com/alpha/
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
 
+# Django packages
 Django==1.4.5
+django-mailer==0.2a1
+django-redis-cache==0.9.7
+metron==0.1 # 0.2.dev3
+pinax-theme-bootstrap==3.0a4
+pinax-utils==1.0b1.dev3
 South==0.8.4
 -e git://github.com/pyohio/symposion.git#egg=symposion
-pinax-theme-bootstrap==3.0a4
-metron==0.1 # 0.2.dev3
-pinax-utils==1.0b1.dev3
-django-mailer==0.2a1
-pytz==2012g
 
-PIL==1.1.7
-
-django-redis-cache==0.9.7
-redis==2.7.2
-hiredis==0.1.1
-
-psycopg2==2.4.6
-gunicorn==0.17.2
+# Other Python packages
 gondor==1.2.2
+gunicorn==0.17.2
+hiredis==0.1.1
+PIL==1.1.7
+psycopg2==2.4.6
+pytz==2012g
+redis==2.7.2
