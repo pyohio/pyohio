@@ -14,7 +14,6 @@ django-user-accounts==1.0b8
 pinax-theme-bootstrap==3.0a4
 metron==0.1 # 0.2.dev3
 pinax-utils==1.0b1.dev3
-django-debug-toolbar==0.9.4
 django-mailer==0.2a1
 django-timezones==0.2
 pytz==2012g
