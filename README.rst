@@ -35,7 +35,7 @@ Then create a local settings file and set your ``DJANGO_SETTINGS_MODULE`` to use
 Exit the virtualenv and reactivate it to activate the settings just changed::
 
     deactivate
-    workon minidam
+    workon pyohio
 
 Setup the postgres database and load fixtures::
 
