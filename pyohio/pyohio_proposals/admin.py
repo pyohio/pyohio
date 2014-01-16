@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .pyohio_proposals.models import (OpenSpaceProposal, TalkProposal,
+from .models import (OpenSpaceProposal, TalkProposal,
     TutorialProposal)
 
 
