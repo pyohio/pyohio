@@ -1,8 +1,7 @@
 from django.conf import settings
 from django.conf.urls import include, patterns, url
 from django.conf.urls.static import static
-
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 
 from django.contrib import admin
 admin.autodiscover()
@@ -15,14 +14,14 @@ import pyohio.views
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
 
 urlpatterns = patterns("",
-    url(r"^$", direct_to_template, {
-        "template": "homepage.html",
-    }, name="home"),
+    url(r"^$",
+        TemplateView.as_view(template_name="homepage.html"),
+        name="home"),
     url(r"^admin/", include(admin.site.urls)),
 
-    url(r"^registration/$", direct_to_template, {
-        "template": "registration.html",
-    }, name="registration"),
+    url(r"^registration/$",
+        TemplateView.as_view(template_name="registration.html"),
+        name="registration"),
 
     url(r"^account/signup/$", symposion.views.SignupView.as_view(), name="account_signup"),
     url(r"^account/login/$", symposion.views.LoginView.as_view(), name="account_login"),
