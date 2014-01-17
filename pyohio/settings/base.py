@@ -15,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),
 # Symposion package
 PACKAGE_ROOT = os.path.join(PROJECT_ROOT, "pyohio")
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # tells Pinax to serve media through the staticfiles app.
