@@ -18,7 +18,7 @@ South==0.8.4
 gondor==1.2.2
 gunicorn==0.17.2
 hiredis==0.1.1
-PIL==1.1.7
+Pillow==2.3.0
 psycopg2==2.4.6
 pytz==2012g
 redis==2.7.2
