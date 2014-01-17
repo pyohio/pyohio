@@ -1,11 +1,11 @@
-# If you change the DB name here, also change it in pycon/settings/travis.py
+# If you change the DB name here, also change it in pyohio/settings/travis.py
 before_script:
   - psql -c 'create database pyohio-2014;' -U postgres
 language: python
 python:
   - "2.7"
 env:
-  - TOXENV=pycon
+  - TOXENV=pyohio
 install:
   - pip install -q tox==1.6.1
 script:
