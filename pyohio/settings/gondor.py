@@ -1,7 +1,7 @@
 import os
 import urlparse
 
-from .settings import *
+from .base import *
 
 DEBUG = {"dev": True}.get(os.environ["GONDOR_INSTANCE"], False)
 

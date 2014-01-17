@@ -3,4 +3,4 @@
 _build
 dev.db
 site_media
-local_settings.py
+local.py

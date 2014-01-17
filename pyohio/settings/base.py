@@ -4,8 +4,15 @@
 import os.path
 import posixpath
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-PACKAGE_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+def env_or_default(NAME, default):
+    return os.environ.get(NAME, default)
+
+# Top level of our source / repository
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                            os.pardir, os.pardir))
+# Symposion package
+PACKAGE_ROOT = os.path.join(PROJECT_ROOT, "pyohio")
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -83,9 +90,6 @@ STATICFILES_FINDERS = [
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = posixpath.join(STATIC_URL, "admin/")
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = "8*br)9@fs!4nzg-imfrsst&oa2udy6z-fqtdk0*e5c1=wn)(t3"
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = [
     "django.template.loaders.filesystem.Loader",
@@ -151,6 +155,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "sitetree",
     "account",
+    "model_utils",
 
     # symposion
     "symposion",
@@ -220,10 +225,3 @@ PROPOSAL_FORMS = {
 }
 
 SESSION_COOKIE_NAME = "PYOHIO2014"
-
-# local_settings.py can be used to override environment-specific settings
-# like database and email that differ between development and production.
-try:
-    from local_settings import *
-except ImportError:
-    pass

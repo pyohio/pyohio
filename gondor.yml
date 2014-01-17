@@ -8,7 +8,7 @@ vcs: git
 # runtime: python-2.7.3
 
 # This path is relative to your project root (the directory gondor.yml lives in.)
-requirements_file: requirements.txt
+requirements_file: requirements/base.txt
 
 # Commands to be executed during deployment. These can handle migrations or
 # moving static files into place. Accepts same parameters as gondor run.
@@ -32,7 +32,7 @@ wsgi:
     # application = the callable in the Python module
     use_environment_cache: true
     entry_point: pyohio.wsgi:application
-    
+
     # Options for gunicorn which runs your WSGI project.
     gunicorn:
         # The worker class used to run gunicorn (possible values include:
@@ -40,4 +40,4 @@ wsgi:
         worker_class: sync
 
 env:
-    DJANGO_SETTINGS_MODULE: pyohio.settings_gondor
+    DJANGO_SETTINGS_MODULE: pyohio.settings.gondor
