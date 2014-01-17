@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-# Django settings for account project
 
 import os.path
 import posixpath
+
+from django.core.urlresolvers import reverse_lazy
 
 
 def env_or_default(NAME, default):
@@ -14,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__),
 # Symposion package
 PACKAGE_ROOT = os.path.join(PROJECT_ROOT, "pyohio")
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # tells Pinax to serve media through the staticfiles app.
@@ -104,7 +105,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
     "reversion.middleware.RevisionMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "pyohio.urls"
@@ -145,7 +145,6 @@ INSTALLED_APPS = [
 
     # external
     "south",
-    "debug_toolbar",
     "mailer",
     "timezones",
     "metron",
@@ -201,14 +200,10 @@ AUTHENTICATION_BACKENDS = [
     "account.auth_backends.EmailAuthenticationBackend",
 ]
 
-LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
+LOGIN_URL = reverse_lazy("account_login")  # NOTE: won't need reverse_lazy in Django 1.5
 
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
-
-DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-}
 
 MARKITUP_SET = "markitup/sets/markdown"
 MARKITUP_FILTER = ["symposion.markdown_parser.parse", {}]
