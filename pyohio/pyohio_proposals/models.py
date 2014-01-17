@@ -4,7 +4,6 @@ from symposion.proposals.models import ProposalBase
 
 
 class Proposal(ProposalBase):
-
     AUDIENCE_LEVEL_NOVICE = 1
     AUDIENCE_LEVEL_EXPERIENCED = 2
     AUDIENCE_LEVEL_INTERMEDIATE = 3
@@ -16,10 +15,12 @@ class Proposal(ProposalBase):
     ]
 
     audience_level = models.IntegerField(choices=AUDIENCE_LEVELS)
-
     recording_release = models.BooleanField(
         default=True,
-        help_text="By submitting your talk proposal, you agree to give permission to the conference organizers to record, edit, and release audio and/or video of your presentation. If you do not agree to this, please uncheck this box."
+        help_text=("By submitting your talk proposal, you agree to give "
+                   "permission to the conference organizers to record, edit, "
+                   "and release audio and/or video of your presentation. If "
+                   "you do not agree to this, please uncheck this box."),
     )
 
     class Meta:
@@ -30,18 +31,12 @@ class Proposal(ProposalBase):
 
 
 class TalkProposal(Proposal):
-    class Meta:
-        verbose_name = "talk proposal"
+    pass
 
 
 class TutorialProposal(Proposal):
-    class Meta:
-        verbose_name = "tutorial proposal"
+    pass
 
 
 class OpenSpaceProposal(ProposalBase):
-    class Meta:
-        verbose_name = "open space proposal"
-
-    def __unicode__(self):
-        return u"%s" % self.title
+    pass
