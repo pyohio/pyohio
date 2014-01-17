@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Django settings for account project
 
 import os.path
 import posixpath
@@ -104,7 +103,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.transaction.TransactionMiddleware",
     "reversion.middleware.RevisionMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "pyohio.urls"
@@ -145,7 +143,6 @@ INSTALLED_APPS = [
 
     # external
     "south",
-    "debug_toolbar",
     "mailer",
     "timezones",
     "metron",
@@ -205,10 +202,6 @@ LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
 
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
-
-DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-}
 
 MARKITUP_SET = "markitup/sets/markdown"
 MARKITUP_FILTER = ["symposion.markdown_parser.parse", {}]
