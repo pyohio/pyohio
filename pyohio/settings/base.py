@@ -3,6 +3,8 @@
 import os.path
 import posixpath
 
+from django.core.urlresolvers import reverse_lazy
+
 
 def env_or_default(NAME, default):
     return os.environ.get(NAME, default)
@@ -198,7 +200,7 @@ AUTHENTICATION_BACKENDS = [
     "account.auth_backends.EmailAuthenticationBackend",
 ]
 
-LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
+LOGIN_URL = reverse_lazy("account_login")  # NOTE: won't need reverse_lazy in Django 1.5
 
 EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
