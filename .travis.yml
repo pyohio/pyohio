@@ -1,6 +1,6 @@
 # If you change the DB name here, also change it in pyohio/settings/travis.py
 before_script:
-  - psql -c 'create database pyohio-2014;' -U postgres
+  - psql -c 'create database pyohio2014;' -U postgres
 language: python
 python:
   - "2.7"
