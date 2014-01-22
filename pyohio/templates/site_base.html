@@ -38,17 +38,17 @@
 
 {% block body_base %}
     <div class="container">
-        
+
         <header>
-            <h1 class="logo"><a href="{% url 'home' %}" title="PyOhio 2013">PyOhio 2013</a></h1>
+            <h1 class="logo"><a href="{% url 'home' %}" title="PyOhio 2014">PyOhio 2014</a></h1>
         </header>
-        
+
         {% include "_messages.html" %}
-        
+
         {# {% block breadcrumbs %} #}
             {# {% sitetree_breadcrumbs from "main" %} #}
         {# {% endblock %} #}
-        
+
         {% block body_outer %}
             <div class="row">
                 <div class="span9">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         {% endblock %}
-        
+
         {% block footer %}
             {% include "_footer.html" %}
         {% endblock %}
