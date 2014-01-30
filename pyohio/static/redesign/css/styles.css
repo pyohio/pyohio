@@ -1,0 +1,291 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Exo 2', sans-serif;
+	font-weight:900;
+	color: #ff4136;
+}
+
+h1 {
+	font-size: 82pt;
+}
+
+h2 {
+	font-size: 36pt;
+}
+
+h3 {
+	font-size: 24pt;
+}
+
+#pyohio-headline {
+	font-family: 'Exo 2', sans-serif;
+	margin-top: 100px;
+	color: #ff4136;
+}
+
+.big-date {
+	font-weight: 400;
+	font-size: 60pt;
+	line-height: 1.2em;
+	color: #ff4136;
+}
+
+.headline-p {
+	font-family: 'Exo 2', sans-serif;
+	padding-top: 2.4em;
+	font-size: 18pt;
+	font-weight: 400;
+	color: #ff4136;
+	line-height: 1.4em;
+}
+
+.index-p {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 18pt;
+	font-weight: 400;
+	color: #ff4136;
+	line-height: 1.4em;
+}
+
+.circle-p {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	color: #fff;
+	line-height: 1em;
+}
+
+.navbar-default {
+  	background-color: #fff;
+  	border-bottom: 1px solid #ff4136;
+}
+
+.navbar-default .navbar-nav > li > a {
+  	padding-left: 30px;
+	font-family: font-family: 'Exo 2', sans-serif;
+	font-weight: 900;
+	font-size: 10pt;
+	color: #ff4136;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  	padding-left: 30px;
+	font-family: font-family: 'Exo 2', sans-serif;
+	font-weight: 900;
+	font-size: 10pt;
+	color: #ff4136;
+	text-decoration: underline #ff4136;
+}
+
+.navbar-default .navbar-toggle {
+  background-color: #fff;
+  border-color: #ff4136;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ff4136;
+}
+
+.navbar-default .navbar-toggle:hover {
+	background-color: #ff4136;
+	border-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
+	background-color: #fff;
+}
+
+.nav > li > a:hover {
+	color: #ff4136;
+	text-decoration: underline;
+}
+
+.dropdown-menu {
+	color: #ff4136;
+    border-radius: 4px;
+}
+
+.dropdown-menu > li > a {
+	text-decoration: none;
+	color: #ff4136;
+}
+
+.dropdown-menu > li > a:visited {
+	color: #ff4136;
+}
+
+.dropdown-menu > a:hover {
+	color: #ff4136;
+	text-decoration: underline;
+}
+
+b {
+	font-weight: 900;
+}
+
+.verticalLine {
+    border-left: 1px solid #ff4136;
+}
+
+.horizontalline {
+	border-top: 2px solid #ff4136;
+}
+
+ul.list li{
+	width: auto;
+	float: left;
+}
+
+a {
+	color: #ff4136;
+}
+
+a:hover {
+	color: #ff4236;
+	text-decoration: underline #ff4136;
+}
+
+.text_line {
+	clear:both;
+}
+
+.padding80pxtb {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+/*Big circle on index*/
+#big-circles {
+	padding-bottom: 320px;
+}
+.circle {
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    color:#fff;
+    padding-top:40px;
+    text-align:center;
+    background: #ff4136
+}
+
+.circle h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 36pt;
+	font-weight:700;
+	color: #fff;
+	margin-bottom: -0.2em;
+
+}
+
+.circle p {
+	font-family: 'Exo 2', sans-serif;
+    font-size: 10pt;
+	font-weight:400;
+	line-height: 1.8em;
+	color: #fff;
+}
+/*Big circle on index*/
+
+/*Small circle on index*/
+.sm-circle {
+    width:200px;
+    height:200px;
+    border: 4px solid #ff4136;
+    border-radius:50%;
+    color:#ff4136;
+    padding-top:30px;
+    padding-left-right: 20px;
+    text-align:center;
+    background: #fff;
+}
+
+.sm-circle h3{
+	font-family: 'Exo 2', sans-serif;
+    font-size: 24pt;
+	font-weight:900;
+	line-height: 1.2em;
+	color: #ff4136;
+	vertical-align: center;
+}
+/*Small circle on index*/
+
+.diamond-bg{
+	background-image: url(../images/diamond.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width:240px;
+	min-height:240px;
+	padding-top: 60px;
+	vertical-align:center;
+}
+
+.diamond-bg p{
+	text-align: center
+}
+
+#footer {
+	height:100px;
+	background-color: #fff;
+	padding-top: 60px;
+	padding-bottom:10px;
+	color: #ff4136;
+}
+
+.footer-p {
+	font-family: 'Exo 2', sans-serif;
+    font-size: 10pt;
+	font-weight:400;
+	color: #ff4136;
+}
+
+ /* Large devices */
+
+@media (min-width: 1000px) {
+
+.navbar-default .navbar-nav > li > a {
+  	padding-left: 20px;
+}
+
+
+
+}
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+
+
+
+
+
+
+
