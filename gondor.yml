@@ -12,7 +12,7 @@ requirements_file: requirements/base.txt
 
 # Commands to be executed during deployment. These can handle migrations or
 # moving static files into place. Accepts same parameters as gondor run.
-# on_deploy:
+on_deploy:
      - manage.py syncdb --noinput
      - manage.py collectstatic --noinput
 
