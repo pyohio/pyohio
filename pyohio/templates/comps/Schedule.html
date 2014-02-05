@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PyOhio 2014</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- Bootstrap -->
+    <link href="{{ STATIC_URL }}redesign/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700,900' rel='stylesheet' type='text/css'>
+    <link href="{{ STATIC_URL }}redesign/css/styles.css" rel="stylesheet">
+
+    <style>
+
+    </style>
+
+  
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+  <div class="container">
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="#"><img src="{{ STATIC_URL }}redesign/images/py-small-logo.svg" alt="volunteer hand icon" width=30 height=30></a>
+  </div>
+<div class="navbar-collapse collapse">
+  <ul class="nav navbar-nav">
+
+    <li class="dropdown verticalLine">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Schedule
+      <b class="caret"></b>
+      </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/schedule/">Conference Schedule</a>
+          </li>
+
+          <li class="divider"></li>
+
+          <li>
+            <a href="/schedule/talks/list/">Talks List</a>
+          </li>
+
+          <li class="divider"></li>
+
+          <li>
+            <a href="/schedule/tutorials/list/">Tutorials List</a>
+          </li>
+
+        </ul>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Sponsors
+      <b class="caret"></b>
+      </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/sponsors/">PyOhio Sponsors</a>
+          </li>
+
+          <li class="divider"></li>
+
+          <li>
+            <a href="/sponsors/apply/">Apply to be a Sponsor</a>
+          </li>
+
+          <li class="divider"></li>
+
+
+          <li>
+            <a href="/sponsors/prospectus/">Sponsors Prospectus</a>
+          </li>
+
+        </ul>
+    </li>
+
+    <li>
+      <a href="/registration/"> Registration </a>
+    </li>
+
+    <li>
+      <a href="http://trizpug.org/boot-camp/pyohio13/"> PyCamp </a>
+    </li>
+
+    <li>
+      <a href="/young-coders/"> PyKids </a>
+    </li>
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Hotel<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/hotel/testpage/">Test</a>
+          </li>
+        </ul>
+    </li>
+
+    <li class=" ">
+      <a href="/dashboard/"> Dashboard </a>
+    </li>
+
+  </ul>
+<ul class="nav navbar-nav navbar-right verticalLine">
+  <li>
+    <a href="/account/login/">Log in</a>
+  </li>
+
+  <li>
+    <a href="/account/signup/">Sign up</a>
+  </li>
+</ul>
+</div>
+<!--/.nav-collapse -->
+</div>
+</div>
+     
+    <!--/container-->
+      <div class="row">
+        <div id="pyohio-headline">
+          <div class="col-xs-12 col-sm-12">
+            <p><h1>Conference<br>Schedule</h1></p> 
+          </div>
+        </div> 
+      </div><!--/.row-->
+
+      <div class="row padding80pxtb">
+        <div class="col-xs-2 col-sm-1 horizontalline"></div>
+        <div class="col-xs-10 col-sm-11"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 index-p"
+            <p><h2>Important Notes for Young Coders Class</h2><br>
+            <p class="uppercase">Schedule:</p><br>
+            <ul class="list-unstyled">
+              <li><strong>8:45—9:30</strong> Check-in and get settled. If you are not at least in line by 9:10, we reserve the right to give up your child's seat.</li>
+              <li><strong>9:30—12:30</strong> Class</li>
+              <li><strong>12:30—1:30</strong> Lunch (Note this starts at the same time, but is shorter than the conference lunch).</li>
+              <li><strong>1:30—4:30</strong> Class</li>
+              <li><strong>4:30—5:30</strong> Free Hacking Time (Optional). Kids can stay and hack on the Pis until 5:30.</li>
+              <li>Parents must sign <a href="https://www.dropbox.com/s/f8m2jtscc4g898n/PyOhio_YC_releaseform.pdf">this release <img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=20 height= 20></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row padding80pxtb">
+        <div class="col-xs-12 col-sm-6">
+          <ul>
+            <li class="schedule d0">
+              <div class="talk">
+                <h2>Saturday July, 26</h2>
+              </div>
+            </li>
+
+            <li class="schedule d1">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+              <div class="talk">
+                <h3><a href="#">Presentation Title</h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+
+            <li class="schedule d2">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+
+            <li class="schedule d1">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</h3>
+                <p class="endtime">End Time</p>
+              </div>
+              <div class="talk">
+                <h3><a href="#">Presentation Title</h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <ul>
+            <li class="schedule d0">
+              <div class="talk">
+                <h2>Sunday July, 27</h2>
+              </div>
+            </li>
+
+            <li class="schedule d1">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+              <div class="talk">
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+
+            <li class="schedule d2">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+
+            <li class="schedule d1">
+              <div class="talk">
+                <p class="time">Time</p>
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+              <div class="talk">
+                <h3><a href="#">Presentation Title</a></h3>
+                <p class="endtime">End Time</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="footer">
+          <div class="pull-left footer-p"><p>©2013 PyOhio</p></div>
+          <div class="pull-right footer-p">
+            <p>Site powered by
+            <a href="http://eldarion.com/symposion/">
+            and hosted on
+            <a href="http://gondor.io/">Gondor</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    </div><!--end of container-->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+

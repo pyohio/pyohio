@@ -1,3 +1,11 @@
+body {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 18pt;
+	font-weight: 400;
+	color: #ff4136;
+	line-height: 1.4em;
+}
+
 h1,
 h2,
 h3,
@@ -19,6 +27,16 @@ h2 {
 
 h3 {
 	font-size: 24pt;
+}
+
+ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+p.uppercase {
+	text-transform:uppercase;
 }
 
 #pyohio-headline {
@@ -57,6 +75,13 @@ h3 {
 	font-weight: 400;
 	color: #fff;
 	line-height: 1em;
+}
+
+.navbar-brand {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .navbar-default {
@@ -224,15 +249,19 @@ a:hover {
 }
 
 .diamond-bg p{
-	text-align: center
+	text-align: center;
+	font-size: 12pt;
+	line-height: 1.4em;
 }
 
 #footer {
 	height:100px;
 	background-color: #fff;
-	padding-top: 60px;
-	padding-bottom:10px;
+	margin-top: 40px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 	color: #ff4136;
+	border-top: 1px solid #ff4136;
 }
 
 .footer-p {
@@ -242,43 +271,246 @@ a:hover {
 	color: #ff4136;
 }
 
+th {
+	font-weight: 900;
+	font-size: 32pt;
+	color: #fff;
+	width:100%;
+	background-color: #ff4136;
+}
+
+
+/*schedule*/
+
+.schedule {
+	padding: .4em;
+	padding-left: 1em;
+}
+
+.schedule .time {
+	font-size: 18pt;
+	font-weight: 300;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.schedule .talk {
+	color: #fff;
+	line-height: 0.6em;
+	padding-top: 0.6em; 
+}
+
+.schedule .talk h2 {
+	margin-top: -0.2em;
+	font-size: 32pt;
+	color: #fff;
+}
+
+.schedule .talk h3 {
+	font-weight: 700;
+	color: #fff;
+}
+
+.schedule .talk h3 a {
+	color: #fff;
+}
+
+.schedule .endtime {
+	color: #fff;
+	font-size: 12pt;
+}
+
+.d0 {
+	background-color: #ff4136;
+}
+
+.d1 {
+	background-color: #e24c4c;
+}
+
+.d2 {
+	background-color: #fd5555;
+}
+
+/*schedule*/
+
  /* Large devices */
 
-@media (min-width: 1000px) {
+@media (max-width: 1200px) {
 
 .navbar-default .navbar-nav > li > a {
   	padding-left: 20px;
+	font-family: font-family: 'Exo 2', sans-serif;
+	font-weight: 900;
+	font-size: 10pt;
+	color: #ff4136;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  	padding-left: 20px;
+	font-family: font-family: 'Exo 2', sans-serif;
+	font-weight: 900;
+	font-size: 10pt;
+	color: #ff4136;
+	text-decoration: underline #ff4136;
+}
+
 }
 
 
-
-}
 
 @media (max-width: 1000px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+
+
+
+/*Big circle on index*/
+#big-circles {
+	padding-bottom: 320px;
+}
+.circle {
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    padding-top:40px;
+    margin-bottom: 40px;
+    text-align:center;
+    background: #ff4136
+}
+
+.circle h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 32pt;
+	font-weight:700;
+	color: #fff;
+	margin-bottom: -0.2em;
+
+}
+
+.circle p {
+	font-family: 'Exo 2', sans-serif;
+    font-size: 8pt;
+	font-weight:400;
+	line-height: 1.4em;
+	color: #fff;
+}
+/*Big circle on index*/
+
+/*Small circle on index*/
+.sm-circle {
+    width:160px;
+    height:160px;
+    padding-top:30px;
+    margin-left-right: 20px;
+    margin-bottom: 20px;
+}
+
+.sm-circle h3{
+	font-family: 'Exo 2', sans-serif;
+    font-size: 20pt;
+	line-height: 1.0em;
+}
+/*Small circle on index*/
+
+.navbar-header {
+    float: none;
+}
+
+.navbar-toggle {
+    display: block;
+}
+
+.navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.navbar-collapse.collapse {
+    display: none!important;
+}
+
+.navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+}
+
+.navbar-nav>li {
+    float: none;
+}
+
+.navbar-nav>li>a {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+}
+
+
+
+@media (max-width: 600px) {
+
+
+
+h1 {
+	font-size: 60pt;
+}
+
+h2 {
+	font-size: 30pt;
+}
+
+h3 {
+	font-size: 18pt;
+}
+
+#pyohio-headline {
+	font-family: 'Exo 2', sans-serif;
+	margin-top: 54px;
+	color: #ff4136;
+}
+
+.big-date {
+	font-weight: 400;
+	font-size: 36pt;
+	line-height: 1.0em;
+}
+
+.headline-p {
+	font-family: 'Exo 2', sans-serif;
+	padding-top: 1.2em;
+	font-size: 14pt;
+	font-weight: 400;
+	color: #ff4136;
+	line-height: 1.2em;
+}
+
+.index-p {
+	font-family: 'Exo 2', sans-serif;
+	font-size: 14pt;
+	font-weight: 400;
+	color: #ff4136;
+	line-height: 1.2em;
+}
+
+.padding80pxtb {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+/*Small circle on index*/
+.sm-circle {
+    width:140px;
+    height:140px;
+    padding-top:20px;
+    margin-left-right: 20px;
+    margin-bottom: 20px;
+}
+
+.sm-circle h3{
+	font-family: 'Exo 2', sans-serif;
+    font-size: 16pt;
+	line-height: 1.1em;
+}
+/*Small circle on index*/
 }
 
 /* Small devices (tablets, 768px and up) */
