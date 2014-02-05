@@ -1,11 +1,11 @@
 # The key associated to your site.
-key: FY0S42YC6U6
+key: Y3D4C8S0C2I
 
 # Version control system used locally for your project.
 vcs: git
 
 # Python version to run on Gondor.
-# runtime: python-2.7.3
+runtime: python-2.7.3
 
 # This path is relative to your project root (the directory gondor.yml lives in.)
 requirements_file: requirements/base.txt
@@ -13,8 +13,8 @@ requirements_file: requirements/base.txt
 # Commands to be executed during deployment. These can handle migrations or
 # moving static files into place. Accepts same parameters as gondor run.
 on_deploy:
-    - manage.py syncdb --noinput
-    - manage.py collectstatic --noinput
+     - manage.py syncdb --noinput
+     - manage.py collectstatic --noinput
 
 # URLs which should be served by Gondor mapping to a filesystem location
 # relative to your writable storage area.
@@ -30,14 +30,18 @@ wsgi:
     #
     # wsgi = the Python module which should be importable
     # application = the callable in the Python module
-    use_environment_cache: true
-    entry_point: pyohio.wsgi:application
+    entry_point: wsgi:application
 
     # Options for gunicorn which runs your WSGI project.
     gunicorn:
         # The worker class used to run gunicorn (possible values include:
         # sync, eventlet and gevent)
         worker_class: sync
+
+    # Determines whether to use virtual environment caching to speed up
+    # deployments (will only install new dependencies; use gondor deploy
+    # --fresh to deploy to rebuild the virtual environment)
+    use_environment_cache: true
 
 env:
     DJANGO_SETTINGS_MODULE: pyohio.settings.gondor
