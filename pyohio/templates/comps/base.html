@@ -1,9 +1,11 @@
-{% load staticfiles %}
 <!DOCTYPE html>
+{% load staticfiles %}
+{% load markitup_tags %}
+{% load sitetree %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
-  <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} | {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
+  <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} | {% endif %}{% block head_title %}{% endblock head_title %}{% endblock head_title_base %}</title>
   {% block viewport %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% endblock viewport %}
@@ -25,11 +27,14 @@
   {% endblock html5shim %}
 
   {% block extra_head_base %}
+    <link href="{% static 'img/favicon.cio' %}" rel="shortcut icon" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    {% markitup_media "no-jquery" %}
     {% block extra_head %}{% endblock extra_head %}
   {% endblock extra_head_base %}
 </head>
 
-<body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+<body class="{% block body_class %}{% endblock body_class %}" id="{% block body_id %}{% endblock body_id %}">
 
   <div class="{% block wrapper_class %}container{% endblock wrapper_class %}">
 
@@ -45,85 +50,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {% block site_brand %}<a class="navbar-brand" href="#"><img src="{% static 'redesign/images/py-small-logo.svg' %}" alt="volunteer hand icon" width=30 height=30></a>{% endblock site_brand %}
+          {% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'redesign/images/py-small-logo.svg' %}" alt="volunteer hand icon" width=30 height=30></a>{% endblock site_brand %}
         </div>
         <div class="navbar-collapse collapse">
           {% block nav %}
-          <ul class="nav navbar-nav">
-            <li class="dropdown verticalLine">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Schedule
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/schedule/">Conference Schedule</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/schedule/talks/list/">Talks List</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/schedule/tutorials/list/">Tutorials List</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Sponsors
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/sponsors/">PyOhio Sponsors</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/sponsors/apply/">Apply to be a Sponsor</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/sponsors/prospectus/">Sponsors Prospectus</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/registration/"> Registration </a>
-            </li>
-
-            <li>
-              <a href="http://trizpug.org/boot-camp/pyohio13/"> PyCamp </a>
-            </li>
-
-            <li>
-              <a href="/young-coders/"> PyKids </a>
-            </li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Hotel<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/hotel/testpage/">Test</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class=" ">
-              <a href="/dashboard/"> Dashboard </a>
-            </li>
-          </ul>
+          {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
           {% endblock nav %}
           {% block account_bar %}
           <ul class="nav navbar-nav navbar-right verticalLine">
@@ -145,6 +76,7 @@
     {% block body_base %}
       <div style="margin-top:75px"></div>
       {% include "_messages.html" %}
+
       {% block body %}{% endblock body %}
     {% endblock body_base %}
 
@@ -169,8 +101,6 @@
   </div><!--end of container-->
 
   {% block script_base %}
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static 'redesign/js/bootstrap.min.js' %}"></script>
   {% block extra_script %}{% endblock extra_script %}
