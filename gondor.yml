@@ -14,6 +14,7 @@ requirements_file: requirements/base.txt
 # moving static files into place. Accepts same parameters as gondor run.
 on_deploy:
      - manage.py syncdb --noinput
+     - manage.py migrate
      - manage.py collectstatic --noinput
 
 # URLs which should be served by Gondor mapping to a filesystem location
