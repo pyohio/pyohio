@@ -15,7 +15,7 @@ South==0.8.4
 -e git://github.com/pyohio/symposion.git#egg=symposion
 
 # Other Python packages
-gondor==1.2.2
+gondor==1.2.4
 gunicorn==0.17.2
 hiredis==0.1.1
 Pillow==2.3.0
