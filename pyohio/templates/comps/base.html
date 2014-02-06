@@ -143,6 +143,8 @@
     {% endblock topbar_base %}
 
     {% block body_base %}
+      <div style="margin-top:75px"></div>
+      {% include "_messages.html" %}
       {% block body %}{% endblock body %}
     {% endblock body_base %}
 

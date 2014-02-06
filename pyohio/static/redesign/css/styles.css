@@ -41,7 +41,6 @@ p.uppercase {
 
 #pyohio-headline {
 	font-family: 'Exo 2', sans-serif;
-	margin-top: 100px;
 	color: #ff4136;
 }
 
@@ -309,7 +308,7 @@ th {
 .schedule .talk {
 	color: #fff;
 	line-height: 0.6em;
-	padding-top: 0.6em; 
+	padding-top: 0.6em;
 }
 
 .schedule .talk h2 {
