@@ -181,6 +181,7 @@ a:hover {
 .padding80pxtb {
 	padding-top: 80px;
 	padding-bottom: 80px;
+	padding-left: 15px;
 }
 
 /*Big circle on index*/
@@ -237,6 +238,17 @@ a:hover {
 	vertical-align: center;
 }
 /*Small circle on index*/
+
+.sponsorlogo {
+    width:200px;
+    height:200px;
+    text-align:center;
+    vertical-align: center;
+}
+
+.sponsorlogo > p {
+	color: #c0c0c0;
+}
 
 .diamond-bg{
 	background-image: url(../images/diamond.svg);
@@ -511,9 +523,18 @@ h3 {
 	line-height: 1.1em;
 }
 /*Small circle on index*/
+
+.sponsorlogo {
+    height:100px;
 }
 
-/* Small devices (tablets, 768px and up) */
+.sponsorlogo > p {
+	color: #c0c0c0;
+    height:100px;
+
+
+}
+
 
 
 
