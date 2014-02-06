@@ -1,278 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>PyOhio 2014</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <!-- Bootstrap -->
-  <link href="{{ STATIC_URL }}redesign/css/bootstrap.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700,900' rel='stylesheet' type='text/css'>
-  <link href="{{ STATIC_URL }}redesign/css/styles.css" rel="stylesheet">
+{% extends "comps/base.html" %}
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-  <![endif]-->
-</head>
+{% load staticfiles %}
 
-<body>
-  <div class="container">
+{% block head_title %}Home{% endblock head_title %}
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="{{ STATIC_URL }}redesign/images/py-small-logo.svg" alt="volunteer hand icon" width=30 height=30></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown verticalLine">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Schedule
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/schedule/">Conference Schedule</a>
-                </li>
+{% block body %}
+<div class="row">
+  <div id="pyohio-headline">
+    <div class="col-xs-12 col-sm-8">
+      <h1>PyOhio 2014</h1>
+      <p class="big-date">July 26 - 27</p>
+      <p class="headline-p">A <b>free</b> annual conference for Python programmers in and<br> around Ohio and the entire Midwest.</p>
+    </div>
 
-                <li class="divider"></li>
+    <div class="col-xs-12 col-sm-4">
+      <div class="diamond-bg">
+        <p>
+          Call for<br>Proposals<br>
+          -<br>
+          <strong>Submit<br>now!</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div><!--/.row-->
 
-                <li>
-                  <a href="/schedule/talks/list/">Talks List</a>
-                </li>
+<div class="row padding80pxtb">
+  <div class="col-xs-2 col-sm-1 horizontalline"></div>
+  <div class="col-xs-10 col-sm-11"></div>
+</div>
 
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/schedule/tutorials/list/">Tutorials List</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Sponsors
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/sponsors/">PyOhio Sponsors</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/sponsors/apply/">Apply to be a Sponsor</a>
-                </li>
-
-                <li class="divider"></li>
-
-                <li>
-                  <a href="/sponsors/prospectus/">Sponsors Prospectus</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/registration/"> Registration </a>
-            </li>
-
-            <li>
-              <a href="http://trizpug.org/boot-camp/pyohio13/"> PyCamp </a>
-            </li>
-
-            <li>
-              <a href="/young-coders/"> PyKids </a>
-            </li>
-
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                Hotel<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/hotel/testpage/">Test</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class=" ">
-              <a href="/dashboard/"> Dashboard </a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right verticalLine">
-            <li>
-              <a href="/account/login/">Log in</a>
-            </li>
-            <li>
-              <a href="/account/signup/">Sign up</a>
-            </li>
-          </ul>
-        </div>
-        <!--/.nav-collapse -->
+<div class="row">
+  <div id="big-circles">
+    <div class="col-xs-12 col-md-4">
+      <div class="circle">
+        <img src="{% static 'redesign/images/sponsor.svg' %}" alt="volunteer hand icon" width=80 height= 70>
+        <h2>Sponsor!<img src="{% static 'redesign/images/caret.svg' %}" alt="caret icon" width=30 height= 30></h2><br>
+        <p>
+          Sponsoring PyOhio lets the attendees<br> know that your organization shares their<br> love of excelence in technology.
+        </p>
       </div>
     </div>
 
-    <div class="row">
-      <div id="pyohio-headline">
-        <div class="col-xs-12 col-sm-8">
-          <h1>PyOhio 2014</h1>
-          <p class="big-date">July 26 - 27</p>
-          <p class="headline-p">A <b>free</b> annual conference for Python programmers in and<br> around Ohio and the entire Midwest.</p>
-        </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="diamond-bg">
-            <p>
-              Call for<br>Proposals<br>
-              -<br>
-              <strong>Submit<br>now!</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div><!--/.row-->
-
-    <div class="row padding80pxtb">
-      <div class="col-xs-2 col-sm-1 horizontalline"></div>
-      <div class="col-xs-10 col-sm-11"></div>
-    </div>
-
-    <div class="row">
-      <div id="big-circles">
-        <div class="col-xs-12 col-md-4">
-          <div class="circle">
-            <img src="{{ STATIC_URL }}redesign/images/sponsor.svg" alt="volunteer hand icon" width=80 height= 70>
-            <h2>Sponsor!<img src="{{ STATIC_URL }}redesign/images/caret.svg" alt="caret icon" width=30 height= 30></h2><br>
-            <p>
-              Sponsoring PyOhio lets the attendees<br> know that your organization shares their<br> love of excelence in technology.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-md-4">
-          <div class="circle">
-            <img src="{{ STATIC_URL }}redesign/images/speak.svg" alt="volunteer hand icon" width=100 height= 70>
-            <h2>Speak<img src="{{ STATIC_URL }}redesign/images/caret.svg" alt="caret icon" width=30 height= 30></h2><br>
-            <p>
-              Have an idea for a talk or tuturial?<br> Sign up and login to submit your<br> proposal now!
-            </p>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-md-4">
-          <div class="circle">
-            <img src="{{ STATIC_URL }}redesign/images/volunteer.svg" alt="volunteer hand icon" width=100 height= 70>
-            <h2>Volunteer <img src="{{ STATIC_URL }}redesign/images/caret.svg" alt="caret icon" width=30 height= 30></h2><br>
-            <p>
-              Help make PyOhio 2014 a smashing success.<br> Sign up to volunteer and you<br> may even get a free t-shirt!
-            </p>
-          </div>
-        </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="circle">
+        <img src="{% static 'redesign/images/speak.svg' %}" alt="volunteer hand icon" width=100 height= 70>
+        <h2>Speak<img src="{% static 'redesign/images/caret.svg' %}" alt="caret icon" width=30 height= 30></h2><br>
+        <p>
+          Have an idea for a talk or tuturial?<br> Sign up and login to submit your<br> proposal now!
+        </p>
       </div>
     </div>
 
-    <div class="row padding80pxtb">
-      <div class="col-xs-2 col-sm-1 horizontalline"></div>
-      <div class="col-xs-10 col-sm-11"></div>
-    </div>
-
-
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 index-p">
-            <div>
-              <h2>Py Kids</h2><br>
-              Young people ages 12-17 are invited to come and learn to program in Python at PyOhio on Saturday, July 27.<br>
-              <a href="http://pyohio.org/young-coders/"><h3>Find Out More <img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=25></h3></a>
-            </div>
-          </div>
-
-          <div class="col-xs-12 col-sm-6 index-p">
-            <div>
-              <h2>Previously...</h2><br>
-              What can you expect at pyohio? Check out <strong>videos</strong> from previous PyOhio conferences:<br>
-              <ul class="list-inline">
-                <li><a href="http://pyvideo.org/category/22/pyohio-2012"><h3>2012 <img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=25></h3></a></li>
-                <li><a href="http://pyvideo.org/category/12/pyohio-2011"><h3>2011 <img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=25></h3></a></li>
-                <li><a href="http://pyvideo.org/category/11/pyohio-2010"><h3>2010 <img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=25></h3></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="circle">
+        <img src="{% static 'redesign/images/volunteer.svg' %}" alt="volunteer hand icon" width=100 height= 70>
+        <h2>Volunteer <img src="{% static 'redesign/images/caret.svg' %}" alt="caret icon" width=30 height= 30></h2><br>
+        <p>
+          Help make PyOhio 2014 a smashing success.<br> Sign up to volunteer and you<br> may even get a free t-shirt!
+        </p>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="row padding80pxtb">
-      <div class="col-xs-2 col-sm-1 horizontalline"></div>
-      <div class="col-xs-10 col-sm-11"></div>
-    </div>
+<div class="row padding80pxtb">
+  <div class="col-xs-2 col-sm-1 horizontalline"></div>
+  <div class="col-xs-10 col-sm-11"></div>
+</div>
 
-    <div class="row">
-      <div class="col-xs-6 col-sm-3">
-        <div class="sm-circle"><h3>Lightning<br> Talks<br><img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=20></h3>
-        </div>
-      </div>
 
-      <div class="col-xs-6 col-sm-3">
-        <div class="sm-circle"><h3>Sprints<br><img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=20></h3>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
-        <div class="sm-circle"><h3>PyCamp<br><img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=20></h3>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-3">
-        <div class="sm-circle"><h3>Young<br>Coders<br><img src="{{ STATIC_URL }}redesign/images/caret-red.svg" alt="caret icon" width=30 height=20></h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="row padding80pxtb">
-      <div class="col-xs-2 col-sm-1 horizontalline"></div>
-      <div class="col-xs-10 col-sm-11"></div>
-    </div>
-
+<div class="row">
+  <div class="col-sm-12 col-md-12">
     <div class="row">
       <div class="col-xs-12 col-sm-6 index-p">
-        PyOhio is only successful through the efforts of our sponsors, speakers, and volunteers. If you would like to support PyOhio and keep it the best Python conference in the Midwest, please donate to the PyOhio Future Fund.
-      </div>
-      <div class="col-xs-12 col-sm-6 index-p">
-        PyOhio is a welcoming, open conference and expects all attendees, speakers, and volunteers to abide by the <a href="/code-of-conduct/"><b>PyOhio Code of Conduct</b></a>.<br>
-        <p>&nbsp;</p>
-        See you in Columbus!
-      </div>
-    </div>
-
-    <div class="row">
-      <div id="footer">
-        <div class="pull-left footer-p"> ©2013 PyOhio </div>
-        <div class="pull-right footer-p">
-          Site powered by
-          <a href="http://eldarion.com/symposion/">Eldarion</a>
-          and hosted on
-          <a href="http://gondor.io/">Gondor</a>.
-        </div>
         <div>
+          <h2>Py Kids</h2><br>
+          Young people ages 12-17 are invited to come and learn to program in Python at PyOhio on Saturday, July 27.<br>
+          <a href="http://pyohio.org/young-coders/"><h3>Find Out More <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 index-p">
+        <div>
+          <h2>Previously...</h2><br>
+          What can you expect at pyohio? Check out <strong>videos</strong> from previous PyOhio conferences:<br>
+          <ul class="list-inline">
+            <li><a href="http://pyvideo.org/category/22/pyohio-2012"><h3>2012 <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+            <li><a href="http://pyvideo.org/category/12/pyohio-2011"><h3>2011 <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+            <li><a href="http://pyvideo.org/category/11/pyohio-2010"><h3>2010 <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div><!--end of container-->
+  </div>
+</div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="{{ STATIC_URL }}redesign/js/bootstrap.min.js"></script>
-</body>
-</html>
+<div class="row padding80pxtb">
+  <div class="col-xs-2 col-sm-1 horizontalline"></div>
+  <div class="col-xs-10 col-sm-11"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="sm-circle"><h3>Lightning<br> Talks<br><img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=20></h3>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-3">
+    <div class="sm-circle"><h3>Sprints<br><img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=20></h3>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-3">
+    <div class="sm-circle"><h3>PyCamp<br><img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=20></h3>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-3">
+    <div class="sm-circle"><h3>Young<br>Coders<br><img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=20></h3>
+    </div>
+  </div>
+</div>
+
+<div class="row padding80pxtb">
+  <div class="col-xs-2 col-sm-1 horizontalline"></div>
+  <div class="col-xs-10 col-sm-11"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 index-p">
+    PyOhio is only successful through the efforts of our sponsors, speakers, and volunteers. If you would like to support PyOhio and keep it the best Python conference in the Midwest, please donate to the PyOhio Future Fund.
+  </div>
+  <div class="col-xs-12 col-sm-6 index-p">
+    PyOhio is a welcoming, open conference and expects all attendees, speakers, and volunteers to abide by the <a href="/code-of-conduct/"><b>PyOhio Code of Conduct</b></a>.<br>
+    <p>&nbsp;</p>
+    See you in Columbus!
+  </div>
+</div>
+{% endblock body %}
