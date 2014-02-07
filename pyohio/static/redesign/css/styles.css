@@ -105,6 +105,18 @@ p.uppercase {
 	text-decoration: underline #ff4136;
 }
 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #ff4136;
+    background-color: initial;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #ff4136;
+}
+
 .navbar-default .navbar-toggle {
   background-color: #fff;
   border-color: #ff4136;
