@@ -5,11 +5,11 @@
 {% load boxes_tags %}
 {% load cache %}
 
-{% block head_title %}Conference Schedule{% endblock %}
+{% block head_title %}Conference Schedule{% endblock head_title %}
 
-{% block body_class %}full{% endblock %}
+{% block body_class %}full{% endblock body_class %}
 
-{% block body_outer %}
+{% block body %}
 <div class="row">
   <div class="pyohio-headline">
     <div class="col-xs-12 col-sm-12">
@@ -45,4 +45,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
+{% endblock body %}
