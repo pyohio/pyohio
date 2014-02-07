@@ -88,6 +88,10 @@ p.uppercase {
   	border-bottom: 1px solid #ff4136;
 }
 
+.navbar-default .navbar-nav > li.active {
+    background-color: #FFEBE0;
+}
+
 .navbar-default .navbar-nav > li > a {
   	padding-left: 30px;
 	font-family: 'Exo 2', sans-serif;
