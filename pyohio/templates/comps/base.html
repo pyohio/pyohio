@@ -50,21 +50,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {% block site_brand %}<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'redesign/images/py-small-logo.svg' %}" alt="volunteer hand icon" width=30 height=30></a>{% endblock site_brand %}
+          {% block site_brand %}<a class="navbar-brand verticalLineRight" href="{% url 'home' %}"><img src="{% static 'redesign/images/py-small-logo.svg' %}" alt="volunteer hand icon" width=30 height=30></a>{% endblock site_brand %}
         </div>
         <div class="navbar-collapse collapse">
           {% block nav %}
-          {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
+            {% sitetree_menu from "main" include "trunk" template "sitetree/menu_bootstrap3.html" %}
           {% endblock nav %}
           {% block account_bar %}
-          <ul class="nav navbar-nav navbar-right verticalLine">
-            <li>
-              <a href="/account/login/">Log in</a>
-            </li>
-            <li>
-              <a href="/account/signup/">Sign up</a>
-            </li>
-          </ul>
+            {% include "_account_bar.html" %}
           {% endblock account_bar %}
         </div>
         <!--/.nav-collapse -->
@@ -103,6 +96,14 @@
   {% block script_base %}
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static 'redesign/js/bootstrap.min.js' %}"></script>
+  <script>
+    $(function() {
+        $('#account_logout').click(function(event) {
+            event.preventDefault();
+            $('#account_logout_form').submit();
+        })
+    });
+  </script>
   {% block extra_script %}{% endblock extra_script %}
   {% endblock script_base %}
 

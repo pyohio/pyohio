@@ -155,6 +155,10 @@ b {
     border-left: 1px solid #ff4136;
 }
 
+.verticalLineRight {
+    border-right: 1px solid #ff4136;
+}
+
 .horizontalline {
 	border-top: 2px solid #ff4136;
 }
