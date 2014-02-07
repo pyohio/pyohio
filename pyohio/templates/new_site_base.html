@@ -70,7 +70,9 @@
       <div style="margin-top:75px"></div>
       {% include "_messages.html" %}
 
-      {% block body %}{% endblock body %}
+      {% block body_outer %}
+        {% block body %}{% endblock body %}
+      {% endblock body_outer %}
     {% endblock body_base %}
 
     {% block footer_base %}
