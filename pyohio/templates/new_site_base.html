@@ -13,6 +13,7 @@
   {% block style_base %}
   <link href="{% static 'redesign/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700,900' rel='stylesheet' type='text/css'>
+  {% markitup_css %}
   <link href="{% static 'redesign/css/styles.css' %}" rel="stylesheet">
   {% block extra_style %}{% endblock extra_style %}
   {% endblock style_base %}
@@ -27,9 +28,9 @@
   {% endblock html5shim %}
 
   {% block extra_head_base %}
-    <link href="{% static 'img/favicon.cio' %}" rel="shortcut icon" />
+    <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon" />
     <script src="https://code.jquery.com/jquery.js"></script>
-    {% markitup_media "no-jquery" %}
+    {% markitup_js "no-jquery" %}
     {% block extra_head %}{% endblock extra_head %}
   {% endblock extra_head_base %}
 </head>
