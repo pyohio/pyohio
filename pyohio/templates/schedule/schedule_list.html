@@ -1,12 +1,11 @@
 {% extends "new_site_base.html" %}
 
-{% load url from future %}
-
 {% load i18n %}
 {% load cache %}
 {% load sitetree %}
 
-{% block head_title %}Presentation Listing{% endblock %}
+{% block head_title %}Accepted {{ schedule.section.name }}{% endblock %}
+{% block page_title %}Accepted {{ schedule.section.name }}{% endblock page_title %}
 
 {% block extra_head %}
     <style>
@@ -22,20 +21,6 @@
 {% endblock %}
 
 {% block body %}
-
-<div class="row">
-  <div class="pyohio-headline">
-    <div class="col-xs-12 col-sm-12">
-      <h1>Accepted {{ schedule.section.name }}</h1>
-    </div>
-  </div>
-</div>
-
-<div class="row padding40pxtb">
-  <div class="col-xs-2 col-sm-1 horizontalline"></div>
-  <div class="col-xs-10 col-sm-11"></div>
-</div>
-
     {% cache 600 "schedule-list" schedule.section.name %}
         {% for presentation in presentations %}
             <div class="row">
