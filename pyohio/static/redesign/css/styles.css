@@ -199,6 +199,12 @@ a:hover {
 	padding-left: 15px;
 }
 
+.padding40pxtb {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+}
+
 /*Big circle on index*/
 #big-circles {
 	padding-bottom: 320px;
@@ -549,14 +555,4 @@ h3 {
 .sponsorlogo > p {
 	color: #c0c0c0;
     height:100px;
-
-
 }
-
-
-
-
-
-
-
-
