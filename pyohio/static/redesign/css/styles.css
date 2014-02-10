@@ -388,7 +388,23 @@ th {
 
 /*schedule*/
 
- 
+
+/* MarkItUp content editor */
+.modal-markItUp,
+.modal-markItUp h3 {
+    color: black;
+}
+.modal-markItUp .modal-footer {
+    margin-top: 0px;
+}
+.markItUpHeader ul li.markItUpButton {
+    padding-right: 6px;
+}
+textarea.markItUpEditor {
+    margin-top: 5px;
+}
+
+
  /* Large devices */
 @media (max-width: 1200px) {
     .navbar-default .navbar-nav > li > a {
@@ -412,7 +428,7 @@ th {
 
 
 @media (max-width: 1000px) {
-    
+
     /*Big circle on index*/
     #big-circles {
     	padding-bottom: 320px;

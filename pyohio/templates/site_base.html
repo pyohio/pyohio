@@ -15,25 +15,6 @@
   <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700,900' rel='stylesheet' type='text/css'>
   {% markitup_css %}
   <link href="{% static 'redesign/css/styles.css' %}" rel="stylesheet">
-  <style>
-    {% comment %}
-    FIXME: For some reason, these styles aren't applying when put in styles.css.
-    {% endcomment %}
-    /* MarkItUp content editor */
-    .modal-markItUp,
-    .modal-markItUp h3 {
-        color: black;
-    }
-    .modal-markItUp .modal-footer {
-        margin-top: 0px;
-    }
-    .markItUpHeader ul li.markItUpButton {
-        padding-right: 6px;
-    }
-    textarea.markItUpEditor {
-        margin-top: 5px;
-    }
-  </style>
   {% block extra_style %}{% endblock extra_style %}
   {% endblock style_base %}
 
