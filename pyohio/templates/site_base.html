@@ -14,6 +14,7 @@
   <link href="{% static 'redesign/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300,700,900' rel='stylesheet' type='text/css'>
   {% markitup_css %}
+  <link href="{% static 'pinax/css/theme.css' %}" rel="stylesheet">
   <link href="{% static 'redesign/css/styles.css' %}" rel="stylesheet">
   {% block extra_style %}{% endblock extra_style %}
   {% endblock style_base %}
@@ -68,7 +69,6 @@
     {% endblock topbar_base %}
 
     {% block body_base %}
-      <div style="margin-top:75px"></div>
       {% include "_messages.html" %}
       {% block body_outer %}
         {% block body %}{% endblock body %}
@@ -78,10 +78,10 @@
     {% block footer_base %}
     <div class="row">
       <div id="footer">
-        <div class="pull-left footer-p">
-          <p>©2014 PyOhio</p>
+        <div class="pull-left">
+          <p>©{% now "Y" %} PyOhio</p>
         </div>
-        <div class="pull-right footer-p">
+        <div class="pull-right">
           <p>
             Site built by
             <a href="http://www.caktusgroup.com">Caktus Consulting Group, LLC</a>
