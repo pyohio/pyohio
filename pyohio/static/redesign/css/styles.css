@@ -39,6 +39,10 @@ p.uppercase {
 	text-transform:uppercase;
 }
 
+body.home .row h2 {
+    margin-top: 0;
+}
+
 #pyohio-headline {
 	font-family: 'Exo 2', sans-serif;
 	color: #ff4136;
@@ -60,20 +64,16 @@ p.uppercase {
 	line-height: 1.4em;
 }
 
+#pyohio-headline p {
+    margin-bottom: 0px;
+}
+
 .index-p {
 	font-family: 'Exo 2', sans-serif;
 	font-size: 18pt;
 	font-weight: 400;
 	color: #ff4136;
 	line-height: 1.4em;
-}
-
-.circle-p {
-	font-family: 'Exo 2', sans-serif;
-	font-size: 12pt;
-	font-weight: 400;
-	color: #fff;
-	line-height: 1em;
 }
 
 .navbar-brand {
@@ -213,6 +213,7 @@ a:hover {
 #big-circles {
 	padding-bottom: 320px;
 }
+
 .circle {
     width:320px;
     height:320px;
@@ -223,21 +224,26 @@ a:hover {
     background: #ff4136
 }
 
-.circle h2 {
-    font-family: 'Exo 2', sans-serif;
+.circle .circle-headline {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+.circle .circle-headline a {
     font-size: 36pt;
-	font-weight:700;
-	color: #fff;
-	margin-bottom: -0.2em;
-
+    font-weight: 700;
+    color: #fff;
+}
+.circle .circle-headline img {
+    margin-bottom: 8px;
+    height: 30px;
+    width: 30px;
 }
 
 .circle p {
-	font-family: 'Exo 2', sans-serif;
     font-size: 10pt;
-	font-weight:400;
-	line-height: 1.8em;
-	color: #fff;
+    font-weight: 400;
+    line-height: 1.8em;
 }
 /*Big circle on index*/
 
@@ -248,32 +254,26 @@ a:hover {
     border: 4px solid #ff4136;
     border-radius:50%;
     color:#ff4136;
-    padding-top:30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align:center;
+    text-align: center;
     background: #fff;
-}
-
-.sm-circle h3{
-	font-family: 'Exo 2', sans-serif;
+    line-height: 1.2;
+    vertical-align: middle;
     font-size: 24pt;
-	font-weight:900;
-	line-height: 1.2em;
-	color: #ff4136;
-	vertical-align: middle;
+    font-weight: 900;
+    padding: 20% 10% 0;
+}
+.sm-circle img {
+    margin-bottom: 5px;
+    height: 20px;
+    width: 30px;
 }
 /*Small circle on index*/
 
 .sponsorlogo {
-    width:200px;
-    height:200px;
-    text-align:center;
+    margin-top: 50px;
+    min-height: 80px;
+    text-align: center;
     vertical-align: middle;
-}
-
-.sponsorlogo > p {
-	color: #c0c0c0;
 }
 
 .diamond-bg{
@@ -282,8 +282,9 @@ a:hover {
 	background-repeat: no-repeat;
 	min-width:240px;
 	min-height:240px;
-	padding-top: 60px;
+	padding-top: 90px;
 	vertical-align: middle;
+    margin-top: 31px;
 }
 
 .diamond-bg p{
@@ -377,20 +378,20 @@ th {
 @media (max-width: 1200px) {
 
 .navbar-default .navbar-nav > li > a {
-  	padding-left: 20px;
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 900;
-	font-size: 10pt;
-	color: #ff4136;
+    padding-left: 20px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    font-size: 10pt;
+    color: #ff4136;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  	padding-left: 20px;
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 900;
-	font-size: 10pt;
-	color: #ff4136;
-	text-decoration: underline;
+    padding-left: 20px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    font-size: 10pt;
+    color: #ff4136;
+    text-decoration: underline;
 }
 
 }
@@ -410,7 +411,7 @@ th {
     height:280px;
     border-radius:50%;
     padding-top:40px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     text-align:center;
     background: #ff4136
 }
@@ -437,16 +438,14 @@ th {
 .sm-circle {
     width:160px;
     height:160px;
-    padding-top:30px;
-    margin-left:20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0 20px 20px;
+    font-size: 16pt;
+    line-height: 1.0em;
 }
-
-.sm-circle h3{
-	font-family: 'Exo 2', sans-serif;
-    font-size: 20pt;
-	line-height: 1.0em;
+.sm-circle img {
+    height: 14px;
+    width: 14px;
+    margin-bottom: 3px;
 }
 /*Small circle on index*/
 
@@ -507,6 +506,7 @@ h3 {
 	color: #ff4136;
 }
 
+
 .big-date {
 	font-weight: 400;
 	font-size: 36pt;
@@ -515,7 +515,7 @@ h3 {
 
 .headline-p {
 	font-family: 'Exo 2', sans-serif;
-	padding-top: 1.2em;
+	padding-top: 30px;
 	font-size: 14pt;
 	font-weight: 400;
 	color: #ff4136;
@@ -539,17 +539,9 @@ h3 {
 .sm-circle {
     width:140px;
     height:140px;
-    padding-top:20px;
-    margin-left:20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 0 20px 20px;
 }
 
-.sm-circle h3{
-	font-family: 'Exo 2', sans-serif;
-    font-size: 16pt;
-	line-height: 1.1em;
-}
 /*Small circle on index*/
 
 .sponsorlogo {
