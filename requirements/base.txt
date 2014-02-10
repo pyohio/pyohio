@@ -9,7 +9,6 @@ Django==1.6.1
 django-mailer==0.2a1
 django-redis-cache==0.9.7
 metron==0.1 # 0.2.dev3
-pinax-theme-bootstrap==3.0a4
 pinax-utils==1.0b1.dev3
 South==0.8.4
 -e git://github.com/pyohio/symposion.git#egg=symposion
@@ -22,3 +21,8 @@ Pillow==2.3.0
 psycopg2==2.4.6
 pytz==2012g
 redis==2.7.2
+
+# Theme requirements
+pinax-theme-bootstrap==5.1.0
+django-forms-bootstrap==3.0.0
+django-bootstrap-form==3.1
