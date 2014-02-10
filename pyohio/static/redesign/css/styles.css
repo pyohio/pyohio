@@ -39,6 +39,21 @@ p.uppercase {
 	text-transform:uppercase;
 }
 
+.form-horizontal .form-group {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.form-horizontal input[type="file"] {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+}
+.form-horizontal .help-block {
+    font-size: 12pt;
+    line-height: 1.1;
+    margin-top: 0;
+}
+
 body.home .row h2 {
     margin-top: 0;
 }
