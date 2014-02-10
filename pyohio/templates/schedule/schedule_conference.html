@@ -6,11 +6,13 @@
 {% load cache %}
 
 {% block head_title %}Conference Schedule{% endblock head_title %}
-{% block page_title %}Conference Schedule{% endblock page_title %}
 
 {% block body_class %}full{% endblock body_class %}
 
 {% block body %}
+
+    {% include "_page_title.html" with page_title="Conference Schedule" %}
+
     <div class="row">
         <div class="span12">
             <div class="box">

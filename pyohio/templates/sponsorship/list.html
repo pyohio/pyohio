@@ -5,11 +5,13 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "About Our Sponsors" %}{% endblock head_title %}
-{% block page_title %}{% trans "About Our Sponsors" %}{% endblock page_title %}
 
 {% block body_class %}sponsorships{% endblock body_class %}
 
 {% block body %}
+{% trans "About Our Sponsors" as page_title %}
+{% include "_page_title.html" %}
+
 <div class="row">
   <div class="span12">
     <a href="{% url 'cms_page' "sponsors/prospectus/" %}" class="btn btn-default">

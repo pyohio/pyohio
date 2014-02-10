@@ -4,10 +4,12 @@
 {% load i18n %}
 
 {% block head_title %}{{ sponsor.level }} {% trans "Sponsorship" %}{% endblock head_title %}
-{% block page_title %}{{ sponsor.level }} {% trans "Sponsorship" %}{% endblock page_title %}
 
 {% block body %}
-<form enctype="multipart/form-data" method="POST" action="" class="form-horizontal">
+  {% trans "Sponsorship" as page_title %}
+  {% include "_page_title.html" %}
+
+  <form enctype="multipart/form-data" method="POST" action="" class="form-horizontal">
     {% csrf_token %}
 
     {{ form|as_bootstrap }}
@@ -31,5 +33,5 @@
         <input class="btn btn-primary" type="submit" value="Save" />
         <a class="btn btn-default" href="{% url 'dashboard' %}">Cancel</a>
     </div>
-</form>
+  </form>
 {% endblock body %}
