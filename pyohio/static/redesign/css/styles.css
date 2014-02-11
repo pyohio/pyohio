@@ -54,6 +54,24 @@ p.uppercase {
     margin-top: 0;
 }
 
+form {
+    color: #333;
+}
+form legend {
+    font-size: 60px;
+    color: #ff4136;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #ff4136;
+}
+form .checkbox {
+    vertical-align: middle;
+    line-height: 1;
+}
+
 body.home .row h2 {
     margin-top: 0;
 }
