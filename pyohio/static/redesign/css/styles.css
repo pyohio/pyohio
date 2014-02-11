@@ -29,6 +29,10 @@ h3 {
 	font-size: 24pt;
 }
 
+ul {
+    padding-left: 40px;
+}
+
 .headline h1,
 .cms-page .container h2,
 form legend {
@@ -40,12 +44,6 @@ form legend {
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 2px solid #ff4136;
-}
-
-ul {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
 }
 
 p.uppercase {
@@ -435,10 +433,6 @@ textarea.markItUpEditor {
 }
 #dashboard .panel-heading .header-actions {
     line-height: 1;
-}
-#dashboard .panel-body ul {
-    list-style: initial;
-    padding-left: 40px;
 }
 
 
