@@ -64,15 +64,19 @@ p.uppercase {
 .form-horizontal .help-block {
     font-size: 12pt;
     line-height: 1.1;
-    margin-top: 0;
+    margin-top: 15px;
 }
 
 form {
     color: #333;
+    margin-bottom: 20px;
 }
 form .checkbox {
     vertical-align: middle;
     line-height: 1;
+}
+form .lead {
+    font-size: 18pt;
 }
 
 body.home .row h2 {
