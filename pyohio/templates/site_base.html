@@ -71,7 +71,11 @@
     {% block body_base %}
       {% include "_messages.html" %}
       {% block body_outer %}
-        {% block body %}{% endblock body %}
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          {% block body %}{% endblock body %}
+        </div>
+      </div>
       {% endblock body_outer %}
     {% endblock body_base %}
 
