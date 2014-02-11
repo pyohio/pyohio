@@ -30,7 +30,7 @@ h3 {
 }
 
 .headline h1,
-.cms-page .container > h2,
+.cms-page .container h2,
 form legend {
     font-size: 60px;
     color: #ff4136;
