@@ -29,6 +29,19 @@ h3 {
 	font-size: 24pt;
 }
 
+.headline h1,
+.cms-page .container > h2,
+form legend {
+    font-size: 60px;
+    color: #ff4136;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #ff4136;
+}
+
 ul {
 	list-style: none;
 	margin-left: 0;
@@ -57,16 +70,6 @@ p.uppercase {
 form {
     color: #333;
 }
-form legend {
-    font-size: 60px;
-    color: #ff4136;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 2px solid #ff4136;
-}
 form .checkbox {
     vertical-align: middle;
     line-height: 1;
@@ -76,13 +79,13 @@ body.home .row h2 {
     margin-top: 0;
 }
 
-#pyohio-headline .headline-date {
+#homepage-headline .headline-date {
     font-size: 60pt;
     font-weight: 400;
     line-height: 1.2em;
 }
 
-#pyohio-headline p {
+#homepage-headline p {
     font-size: 18pt;
     font-weight: 400;
     line-height: 1.4em;
@@ -539,12 +542,12 @@ textarea.markItUpEditor {
     	font-size: 18pt;
     }
 
-    #pyohio-headline .headline-date {
+    #homepage-headline .headline-date {
         font-size: 36pt;
         line-height: 1.0em;
     }
 
-    #pyohio-headline p {
+    #homepage-headline p {
         font-size: 14pt;
         padding-top: 30px;
         line-height: 1.2em;
