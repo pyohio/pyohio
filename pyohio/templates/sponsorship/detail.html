@@ -14,20 +14,22 @@
 
     {{ form|as_bootstrap }}
 
+    {% if formset.forms %}
     <h3>{{ sponsor.level }} Sponsor Benefits</h3>
 
     {{ formset.management_form|as_bootstrap }}
-    {{ formset.non_form_errors }}
+      {{ formset.non_form_errors }}
 
-    {% for form in formset.forms %}
-    <div class="form-group">
-        <label>{{ form.instance.benefit }}</label>
-        {% if form.instance.benefit.description %}
-            <p class="help-block">{{ form.instance.benefit.description }}</p>
-        {% endif %}
-        {{ form|as_bootstrap }}
-    </div>
-    {% endfor %}
+      {% for form in formset.forms %}
+      <div class="form-group">
+          <label>{{ form.instance.benefit }}</label>
+          {% if form.instance.benefit.description %}
+              <p class="help-block">{{ form.instance.benefit.description }}</p>
+          {% endif %}
+          {{ form|as_bootstrap }}
+      </div>
+      {% endfor %}
+    {% endif %}
 
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="Save" />
