@@ -82,3 +82,6 @@ if "GONDOR_SENDGRID_USER" in os.environ:
     EMAIL_HOST_USER = os.environ["GONDOR_SENDGRID_USER"]
     EMAIL_HOST_PASSWORD = os.environ["GONDOR_SENDGRID_PASSWORD"]
     EMAIL_USE_TLS = True
+
+
+SECRET_KEY = os.environ["SECRET_KEY"]
