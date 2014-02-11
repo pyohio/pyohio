@@ -436,6 +436,12 @@ textarea.markItUpEditor {
 }
 
 
+body.sponsorships .media p {
+    font-size: 12pt;
+    line-height: 1.4;
+}
+
+
  /* Large devices */
 @media (max-width: 1200px) {
     .navbar-default .navbar-nav > li > a {
