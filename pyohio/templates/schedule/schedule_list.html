@@ -26,8 +26,7 @@
 
     {% cache 600 "schedule-list" schedule.section.name %}
         {% for presentation in presentations %}
-            <div class="row">
-                <div class="span8 presentation well">
+                <div class="presentation well">
                     <h3>
                       <a href="{% url 'schedule_presentation_detail' presentation.pk %}">{{ presentation.title }}</a>
                     </h3>
@@ -42,7 +41,6 @@
                     {% endif %}
                     <small>{{ presentation.description }}</small>
                 </div>
-            </div>
         {% endfor %}
     {% endcache %}
 {% endblock %}

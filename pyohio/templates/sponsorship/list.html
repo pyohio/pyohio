@@ -9,11 +9,9 @@
 {% block body_class %}sponsorships{% endblock body_class %}
 
 {% block body %}
-{% trans "About Our Sponsors" as page_title %}
-{% include "_page_title.html" %}
+  {% trans "About Our Sponsors" as page_title %}
+  {% include "_page_title.html" %}
 
-<div class="row">
-  <div class="span12">
     <a href="{% url 'cms_page' "sponsors/prospectus/" %}" class="btn btn-default">
       Learn how to become a sponsor <span class="arrow"></span>
     </a>
@@ -26,14 +24,14 @@
         {% for sponsor in level.sponsors %}
           {% if sponsor.website_logo %}
           <div class="row">
-            <div class="span2">
+            <div class="col-sm-2 col-xs-2">
               <h2>
                 <a href="{{ sponsor.external_url }}">
                   <img src="http://placekitten.com/150/80" alt="{{ sponsor.name }}" />
                 </a>
               </h2>
             </div>
-            <div class="span10">
+            <div class="col-sm-10 col-xs-10">
               <h5>{{ sponsor.name }}</h5>
               <p><a href="{{ sponsor.external_url }}">{{ sponsor.external_url }}</a></p>
               <p>{{ sponsor.listing_text|urlize|linebreaks }}</p>
@@ -43,6 +41,4 @@
         {% endfor %}
       {% endif %}
     {% endfor %}
-  </div>
-</div>
 {% endblock %}
