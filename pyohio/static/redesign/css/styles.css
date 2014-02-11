@@ -194,11 +194,11 @@ b {
 	font-weight: 900;
 }
 
-.verticalLine {
+.nav.navbar-right {
     border-left: 1px solid #ff4136;
 }
 
-.verticalLineRight {
+.navbar-brand {
     border-right: 1px solid #ff4136;
 }
 
