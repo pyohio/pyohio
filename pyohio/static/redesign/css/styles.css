@@ -58,29 +58,18 @@ body.home .row h2 {
     margin-top: 0;
 }
 
-#pyohio-headline {
-	font-family: 'Exo 2', sans-serif;
-	color: #ff4136;
-}
-
-.big-date {
-	font-weight: 400;
-	font-size: 60pt;
-	line-height: 1.2em;
-	color: #ff4136;
-}
-
-.headline-p {
-	font-family: 'Exo 2', sans-serif;
-	padding-top: 2.4em;
-	font-size: 18pt;
-	font-weight: 400;
-	color: #ff4136;
-	line-height: 1.4em;
+#pyohio-headline .headline-date {
+    font-size: 60pt;
+    font-weight: 400;
+    line-height: 1.2em;
 }
 
 #pyohio-headline p {
+    font-size: 18pt;
+    font-weight: 400;
+    line-height: 1.4em;
     margin-bottom: 0px;
+    padding-top: 2.4em;
 }
 
 .index-p {
@@ -532,25 +521,15 @@ textarea.markItUpEditor {
     	font-size: 18pt;
     }
 
-    #pyohio-headline {
-    	font-family: 'Exo 2', sans-serif;
-    	margin-top: 54px;
-    	color: #ff4136;
+    #pyohio-headline .headline-date {
+        font-size: 36pt;
+        line-height: 1.0em;
     }
 
-    .big-date {
-    	font-weight: 400;
-    	font-size: 36pt;
-    	line-height: 1.0em;
-    }
-
-    .headline-p {
-    	font-family: 'Exo 2', sans-serif;
-    	padding-top: 30px;
-    	font-size: 14pt;
-    	font-weight: 400;
-    	color: #ff4136;
-    	line-height: 1.2em;
+    #pyohio-headline p {
+        font-size: 14pt;
+        padding-top: 30px;
+        line-height: 1.2em;
     }
 
     .index-p {

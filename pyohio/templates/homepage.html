@@ -14,12 +14,11 @@
 <div class="row">
 
   <!-- headline -->
-  <div id="pyohio-headline">
-    <div class="col-xs-12 col-sm-8">
+  <div>
+    <div class="col-xs-12 col-sm-8" id="pyohio-headline">
       <h1>{{ SITE_NAME }}</h1>
-      <p class="big-date">July 26 - 27</p>
-      <p class="headline-p">A <b>free</b> annual conference for Python
-      programmers in and around Ohio and the entire Midwest.</p>
+      <div class="headline-date">July 26 - 27</div>
+      {% box "homepage_slogan" %}
     </div>
 
     <!-- diamond -->
@@ -94,6 +93,7 @@
   <div class="col-xs-10 col-sm-11"></div>
 </div>
 
+
 <!-- sponsors -->
 <div class="row sponsors">
   <div class="col-xs-12 col-sm-12 index-p">
@@ -126,14 +126,14 @@
   <div class="col-xs-12 col-sm-12">
     <div class="row">
       <div class="col-xs-12 col-sm-6 index-p">
-        <h2>Py Kids</h2>
-        <p>Young people ages 12-17 are invited to come and learn to program in Python at {{ SITE_NAME }} on Saturday, July 27.</p>
+        <h2>PyKids</h2>
+        {% box "homepage_pykids" %}
         <a href="{% url "cms_page" "young-coders/" %}"><h3>Find Out More <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a>
       </div>
 
       <div class="col-xs-12 col-sm-6 index-p">
         <h2>Previously...</h2>
-        <p>What can you expect at {{ SITE_NAME }}? Check out <strong>videos</strong> from previous PyOhio conferences:</p>
+        {% box "homepage_previously" %}
         <ul class="list-inline">
           <li><a href="http://pyvideo.org/category/22/pyohio-2012"><h3>2012 <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
           <li><a href="http://pyvideo.org/category/12/pyohio-2011"><h3>2011 <img src="{% static 'redesign/images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
@@ -186,12 +186,11 @@
 <!-- Pyohio info -->
 <div class="row">
   <div class="col-xs-12 col-sm-6 index-p">
-    <p>PyOhio is only successful through the efforts of our sponsors, speakers, and volunteers. If you would like to support PyOhio and keep it the best Python conference in the Midwest, please donate to the PyOhio Future Fund.</p>
+    {% box "homepage_please_donate" %}
   </div>
 
   <div class="col-xs-12 col-sm-6 index-p">
-    <p>PyOhio is a welcoming, open conference and expects all attendees, speakers, and volunteers to abide by the <a href="{% url "cms_page" "code-of-conduct/" %}"><strong>PyOhio Code of Conduct</strong></a>.</p>
-    <p>See you in Columbus!</p>
+    {% box "homepage_code_of_conduct" %}
   </div>
 </div>
 <!-- /Pyohio info -->
