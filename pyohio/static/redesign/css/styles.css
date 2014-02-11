@@ -412,6 +412,18 @@ textarea.markItUpEditor {
     margin-top: 5px;
 }
 
+#markItUpId_body {
+    width: inherit;
+}
+#markItUpId_body textarea {
+    width: 100%;
+}
+@media (min-width: 600px) {
+    #markItUpId_body textarea {
+        height: 400px;
+    }
+}
+
 
 #dashboard .panel,
 #dashboard .panel h3,
