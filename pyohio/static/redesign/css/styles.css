@@ -329,7 +329,8 @@ a:hover {
     font-size: 10pt;
     font-weight: 400;
     height: 100px;
-    padding: 10px 0 5px;
+    line-height: 1.4;
+    padding: 20px 0 5px;
 }
 
 th {

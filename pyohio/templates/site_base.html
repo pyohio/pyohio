@@ -80,18 +80,18 @@
     {% endblock body_base %}
 
     {% block footer_base %}
-    <div class="row">
-      <div id="footer">
+    <div class="row" id="footer">
+      <div class="col-xs-3 col-sm-3">
         <div class="pull-left">
           <p>©{% now "Y" %} PyOhio</p>
         </div>
+      </div>
+      <div class="col-xs-9 col-sm-9">
         <div class="pull-right">
-          <p>
             Site built by
             <a href="http://www.caktusgroup.com">Caktus Consulting Group, LLC</a>
             and hosted on
             <a href="http://gondor.io/">Gondor</a>.
-          </p>
         </div>
       </div>
     </div>
