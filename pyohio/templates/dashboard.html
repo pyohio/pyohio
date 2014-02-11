@@ -13,18 +13,18 @@
 {% block body %}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="icon-bullhorn"></i>{% trans "Speaking" %}
+            <i class="fa fa-bullhorn"></i> {% trans "Speaking" %}
             <div class="pull-right header-actions">
                 {% if not user.speaker_profile %}
                     <a href="{% url 'speaker_create' %}" class="btn btn-default">
-                        <i class="icon-plus-sign"></i> Create a speaker profile
+                        <i class="fa fa-plus"></i> Create a speaker profile
                     </a>
                 {% else %}
                     <a href="{% url 'speaker_edit' %}" class="btn btn-default">
-                        <i class="icon-pencil"></i> Edit your speaker profile
+                        <i class="fa fa-pencil"></i> Edit your speaker profile
                     </a>
                     <a href="{% url 'proposal_submit' %}" class="btn btn-default">
-                        <i class="icon-plus-sign"></i> Submit a new proposal
+                        <i class="fa fa-plus"></i> Submit a new proposal
                     </a>
                 {% endif %}
             </div>
@@ -88,11 +88,11 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="icon-briefcase"></i>{% trans "Sponsorship" %}
+            <i class="fa fa-briefcase"></i> {% trans "Sponsorship" %}
             <div class="pull-right header-actions">
                 {% if not user.sponsorships.exists %}
                     <a href="{% url 'sponsor_apply' %}" class="btn">
-                        <i class="icon-plus-sign"></i> Apply to be a sponsor
+                        <i class="fa fa-plus"></i> Apply to be a sponsor
                     </a>
                 {% endif %}
             </div>
@@ -127,7 +127,7 @@
     {% if review_sections %}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="icon-briefcase"></i>{% trans "Reviews" %}
+                <i class="fa fa-briefcase"></i> {% trans "Reviews" %}
             </div>
 
             <div class="panel-body">
@@ -170,7 +170,7 @@
     {% if user.memberships.exists or available_teams %}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="icon-group"></i>{% trans "Teams" %}
+                <i class="fa fa-group"></i> {% trans "Teams" %}
             </div>
 
             <div class="panel-body">
