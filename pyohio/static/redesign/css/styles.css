@@ -77,6 +77,12 @@ form .lead {
     font-size: 18pt;
 }
 
+body.sponsorships .media .media-image {
+    min-width: 150px;
+    margin-right: 10px;
+    text-align: center;
+}
+
 body.home .row h2 {
     margin-top: 0;
 }
