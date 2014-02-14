@@ -24,10 +24,10 @@
         {% if sponsor.website_logo %}
         <div class="media">
           <div class="media-image pull-left">
-            <a href="{{ sponsor.external_url }}">
+            {% if sponsor.external_url %}<a href="{{ sponsor.external_url }}">{% endif %}
               <img src="{% thumbnail sponsor.website_logo "150x80" %}"
                       alt="{{ sponsor.name }}" />
-            </a>
+            {% if sponsor.external_url %}</a>{% endif %}
           </div>
           <div class="media-body">
             <h4 class="media-heading">{{ sponsor.name }}</h4>
