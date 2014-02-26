@@ -1,13 +1,9 @@
 from django.db import models
 
-from model_utils.managers import InheritanceManager
-
 from symposion.proposals.models import ProposalBase
 
 
 class Proposal(ProposalBase):
-
-    objects = InheritanceManager()
 
     AUDIENCE_LEVEL_NOVICE = 1
     AUDIENCE_LEVEL_EXPERIENCED = 2
