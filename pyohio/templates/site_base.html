@@ -103,14 +103,6 @@
   {% block script_base %}
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script>
-    $(function() {
-        $('#account_logout').click(function(event) {
-            event.preventDefault();
-            $('#account_logout_form').submit();
-        })
-    });
-  </script>
   {% block extra_script %}{% endblock extra_script %}
   {% endblock script_base %}
 
