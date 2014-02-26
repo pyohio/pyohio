@@ -12,8 +12,10 @@ import pyohio.views
 # from pinax.apps.account.openid_consumer import PinaxConsumer
 
 WIKI_SLUG = r"(([\w-]{2,})(/[\w-]{2,})*)"
-
-urlpatterns = patterns("",
+urlpatterns = patterns ("")
+if 'comps' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('', url(r'^', include('comps.urls')))
+urlpatterns += patterns("",
     url(r"^$",
         TemplateView.as_view(template_name="homepage.html"),
         name="home"),

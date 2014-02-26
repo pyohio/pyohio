@@ -142,6 +142,7 @@ INSTALLED_APPS = [
     # theme
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
+    "bootstrapform",
 
     # external
     "south",
@@ -220,3 +221,5 @@ PROPOSAL_FORMS = {
 }
 
 SESSION_COOKIE_NAME = "PYOHIO2014"
+
+THEME_CONTACT_EMAIL = 'support@pyohio.org'

@@ -21,7 +21,7 @@ This documentation assume you have the following installed::
 
 Create a new virtualenv and install the necessary requirements::
 
-    mkvirtualenv --distribute pyohio
+    mkvirtualenv --distribute pyohio --python=python2.7
     $VIRTUAL_ENV/bin/pip install -r $PWD/requirements/dev.txt
 
 (For production, install -r requirements/base.txt).
