@@ -9,13 +9,6 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
 
-        # Delete the old stale tables if they exist
-        for table in ['talk', 'openspace', 'tutorial']:
-            try:
-                db.delete_table(u'proposals_%sproposal' % table)
-            except:
-                pass
-
         # Adding model 'TalkProposal'
         db.create_table(u'proposals_talkproposal', (
             (u'proposalbase_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['proposals.ProposalBase'], unique=True, primary_key=True)),
