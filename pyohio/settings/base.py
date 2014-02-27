@@ -170,7 +170,7 @@ INSTALLED_APPS = [
     "symposion.schedule",
 
     # project
-    "pyohio.pyohio_proposals",
+    "pyohio.proposals",
 ]
 
 FIXTURE_DIRS = [
@@ -215,11 +215,15 @@ CONFERENCE_ID = 1
 SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 
 PROPOSAL_FORMS = {
-    "tutorial": "pyohio.pyohio_proposals.forms.TutorialProposalForm",
-    "talk": "pyohio.pyohio_proposals.forms.TalkProposalForm",
-    "open-space": "pyohio.pyohio_proposals.forms.OpenSpaceProposalForm",
+    "tutorial": "pyohio.proposals.forms.TutorialProposalForm",
+    "talk": "pyohio.proposals.forms.TalkProposalForm",
+    "open-space": "pyohio.proposals.forms.OpenSpaceProposalForm",
 }
 
 SESSION_COOKIE_NAME = "PYOHIO2014"
 
 THEME_CONTACT_EMAIL = 'support@pyohio.org'
+
+SOUTH_MIGRATION_MODULES = {
+    'proposals': 'pyohio.proposals.migrations',
+}

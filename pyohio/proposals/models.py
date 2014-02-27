@@ -4,6 +4,7 @@ from symposion.proposals.models import ProposalBase
 
 
 class Proposal(ProposalBase):
+
     AUDIENCE_LEVEL_NOVICE = 1
     AUDIENCE_LEVEL_EXPERIENCED = 2
     AUDIENCE_LEVEL_INTERMEDIATE = 3
