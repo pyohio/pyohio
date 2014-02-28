@@ -406,6 +406,9 @@ th {
 .modal-markItUp h3 {
     color: black;
 }
+.modal-markItUp .modal-dialog {
+    width: 730px;
+}
 .modal-markItUp .modal-footer {
     margin-top: 0px;
 }
