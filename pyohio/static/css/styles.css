@@ -450,6 +450,18 @@ body.sponsorships .media p {
     line-height: 1.4;
 }
 
+.calendar {
+    font-size: 16pt;
+    table-layout: fixed;
+    width: 100%;
+}
+.calendar th {
+    font-size: 20pt;
+}
+.calendar td .title {
+    font-weight: bold;
+}
+
 
  /* Large devices */
 @media (max-width: 1200px) {

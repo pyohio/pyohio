@@ -1,4 +1,4 @@
-<table class="calendar table table-bordered">
+<table class="calendar table table-bordered table-condensed">
   <thead>
     <tr>
       <th class="time">&nbsp;</th>
@@ -15,25 +15,22 @@
         <td class="slot slot-{{ slot.kind.label }}"
             colspan="{{ slot.colspan }}" rowspan="{{ slot.rowspan }}">
           {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
-            {% if not slot.content %}
-              <a class="btn btn-mini edit-slot" href="#"
-                 data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">+</a>
-            {% else %}
-              <span class="title">
-                <a class="edit-slot" href="#"
-                   data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">{{ slot.content.title }}</a>
-              </span>
-              <span class="speaker">{{ slot.content.speaker }}</span>
-            {% endif %}
+            <a class="edit-slot" href="#"
+               data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+              <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
+            </a>
+            <p class="title">{{ slot.content.title }}</p>
+            <p class="speaker">{{ slot.content.speaker }}</p>
           {% else %}
+            <a class="edit-slot" href="#"
+               data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+              <i class="fa fa-edit"></i>
+            </a>
             {% if slot.content_override.raw %}
               {{ slot.content_override.rendered|safe }}
             {% else %}
               {{ slot.kind.label }}
             {% endif %}
-            &mdash;
-            <a class="edit-slot" href="#"
-               data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">edit</a>
           {% endif %}
         </td>
         {% endfor %}
