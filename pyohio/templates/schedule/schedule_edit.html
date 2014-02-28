@@ -16,7 +16,7 @@
       $("a.edit-slot").click(function(event) {
         event.preventDefault();
         $("#slotEditModal").load($(this).data("action"), function() {
-          $("#id_presentation").chosen();
+          $("#id_presentation").chosen({width: "100%"});
           $("#slotEditModal").modal("show");
         });
       });
