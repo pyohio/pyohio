@@ -406,6 +406,9 @@ th {
 .modal-markItUp h3 {
     color: black;
 }
+.modal-markItUp .modal-dialog {
+    width: 730px;
+}
 .modal-markItUp .modal-footer {
     margin-top: 0px;
 }
@@ -445,6 +448,18 @@ textarea.markItUpEditor {
 body.sponsorships .media p {
     font-size: 12pt;
     line-height: 1.4;
+}
+
+.calendar {
+    font-size: 16pt;
+    table-layout: fixed;
+    width: 100%;
+}
+.calendar th {
+    font-size: 20pt;
+}
+.calendar td .title {
+    font-weight: bold;
 }
 
 

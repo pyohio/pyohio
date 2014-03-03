@@ -1,0 +1,38 @@
+{% extends "site_base.html" %}
+
+{% load bootstrap_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Conference Schedule Edit{% endblock head_title %}
+
+{% block extra_style %}
+  <link rel="stylesheet" href="{% static "chosen/chosen.min.css" %}" />
+{% endblock extra_style %}
+
+{% block extra_script %}
+  <script src="{% static "chosen/chosen.jquery.min.js" %}"></script>
+  <script>
+    $(function() {
+      $("a.edit-slot").click(function(event) {
+        event.preventDefault();
+        $("#slotEditModal").load($(this).data("action"), function() {
+          $("#id_presentation").chosen({width: "100%"});
+          $("#slotEditModal").modal("show");
+        });
+      });
+    });
+  </script>
+{% endblock extra_script %}
+
+{% block body %}
+  {% with "Conference Schedule Edit" as page_title %}
+    {% include "_page_title.html" %}
+  {% endwith %}
+
+  {% for timetable in days %}
+    <h2>{{ timetable.day.date }}</h2>
+    {% include "schedule/_edit_grid.html" %}
+  {% endfor %}
+
+  <div class="modal-markItUp modal fade" id="slotEditModal"></div>
+{% endblock body %}

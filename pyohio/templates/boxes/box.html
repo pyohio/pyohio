@@ -3,7 +3,7 @@
 
 {% if form %}
     <div id="edit_{{ label }}" class="modal-markItUp modal fade">
-      <div class="modal-dialog" style="width: 730px;">
+      <div class="modal-dialog">
         <div class="modal-content">
           <form method="POST" id="edit_form_{{ label }}" class="modal-form"
                 accept-charset="UTF-8" action="{{ form_action }}?next={{ request.path }}">
