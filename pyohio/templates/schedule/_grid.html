@@ -1,5 +1,5 @@
 {% load url from future %}
-
+{% load boxes_tags %}
 {% regroup timetable.slots_qs by start as slots %}
 
 <div class="col-md-6">
@@ -42,4 +42,7 @@
         {% endfor %}
         </tbody>
     </table>
+    {% with timetable.day.date.day|slugify as day %}
+        {% box "schedule_day_"|add:day %}
+    {% endwith %}
 </div>

@@ -20,16 +20,6 @@
                 {% include "schedule/_grid.html" %}
         {% endfor %}
     </div>
-    <div class="row">
-        {% for timetable in section.days %}
-                {% with timetable.day.date.day|slugify as day %}
-                <div class="col-md-6">
-                    {% box "schedule_day_"|add:day %}
-                </div>
-                {% endwith %}
-        {% endfor %}
-    </div>
-
     {% endfor %}
 
     {% box "schedule_bottom" %}
