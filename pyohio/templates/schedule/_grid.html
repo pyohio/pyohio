@@ -2,39 +2,46 @@
 
 {% regroup timetable.slots_qs by start as slots %}
 
-<table class="calendar table">
-    <tbody>
-    {% for slot_group in slots %}
-        <tr class="{% cycle 'odd' 'even' %}">
-            <td>
-                <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
-                {% for slot in slot_group.list %}
-                    {% if slot.content %}
-                        <p class="title">
-                            <a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a>
-                        </p>
-                    {% else %}
-                        {% if slot.content_override.raw %}
-                            {{ slot.content_override.rendered|safe }}
+<div class="col-md-6">
+    <table class="calendar table">
+        <thead>
+            <tr>
+                <th>{{ timetable.day.date|date:"l, F jS" }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for slot_group in slots %}
+            <tr class="{% cycle 'odd' 'even' %}">
+                <td>
+                    <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
+                    {% for slot in slot_group.list %}
+                        {% if slot.content %}
+                            <p class="title">
+                                <a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a>
+                            </p>
                         {% else %}
+                            {% if slot.content_override.raw %}
+                                {{ slot.content_override.rendered|safe }}
+                            {% else %}
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                  <p class="end-time">
-                  until {{ slot.end }}
-                  <span class="room">in
-                  {% for room in slot.rooms %}
-                      {{ room.name }}{% if not forloop.last %}, {% endif %}
-                  {% endfor %}
-                  </span>
-                 </p>
-                 {% if slot.content %}
-                 <p class="speaker">
-                    {{ slot.content.speakers|join:", " }}
-                 </p>
-                 {% endif %}
-                {% endfor %}
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+                      <p class="end-time">
+                      until {{ slot.end }}
+                      <span class="room">in
+                      {% for room in slot.rooms %}
+                          {{ room.name }}{% if not forloop.last %}, {% endif %}
+                      {% endfor %}
+                      </span>
+                     </p>
+                     {% if slot.content %}
+                     <p class="speaker">
+                        {{ slot.content.speakers|join:", " }}
+                     </p>
+                     {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

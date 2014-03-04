@@ -1,51 +1,52 @@
 {% regroup timetable.slots_qs by start as slots %}
-
-
-
-<table class="calendar table table-condensed">
-  <tbody>
-    {% for slot_group in slots %}
-        <tr class="{% cycle 'odd' 'even' %}">
-            <td>
-                <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
-                {% for slot in slot_group.list %}
-                    {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
-                      <a class="edit-slot" href="#"
-                         data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-                        <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
-                      </a>
-                      <p class="title">{{ slot.content.title }}</p>
-                      <p class="speaker">{{ slot.content.speaker }}</p>
-                    {% else %}
-                      <a class="edit-slot" href="#"
-                         data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-                        <i class="fa fa-edit"></i>
-                      </a>
-                      {% if slot.content_override.raw %}
-                        {{ slot.content_override.rendered|safe }}
+<div class="col-md-6">
+  <table class="calendar table">
+      <thead>
+          <tr>
+              <th>{{ timetable.day.date|date:"l, F jS" }}</th>
+          </tr>
+      </thead>
+    <tbody>
+      {% for slot_group in slots %}
+          <tr class="{% cycle 'odd' 'even' %}">
+              <td>
+                  <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
+                  {% for slot in slot_group.list %}
+                      {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
+                        <a class="edit-slot" href="#"
+                           data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+                          <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
+                        </a>
+                        <p class="title">{{ slot.content.title }}</p>
+                        <p class="speaker">{{ slot.content.speaker }}</p>
                       {% else %}
-                        {{ slot.kind.label }}
+                        <a class="edit-slot" href="#"
+                           data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                        {% if slot.content_override.raw %}
+                          {{ slot.content_override.rendered|safe }}
+                        {% else %}
+                          {{ slot.kind.label }}
+                        {% endif %}
                       {% endif %}
-                    {% endif %}
-                  <p class="end-time">
-                  until {{ slot.end }}
-                  <span class="room">in
-                  {% for room in slot.rooms %}
-                      {{ room.name }}{% if not forloop.last %}, {% endif %}
+                    <p class="end-time">
+                    until {{ slot.end }}
+                    <span class="room">in
+                    {% for room in slot.rooms %}
+                        {{ room.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                    </span>
+                   </p>
+                  {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
+                   <p class="speaker">
+                      {{ slot.content.speakers|join:", " }}
+                   </p>
+                   {% endif %}
                   {% endfor %}
-                  </span>
-                 </p>
-                {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
-                 <p class="speaker">
-                    {{ slot.content.speakers|join:", " }}
-                 </p>
-                 {% endif %}
-                {% endfor %}
-            </td>
-        </tr>
-    {% endfor %}
-
-
-
-  </tbody>
-</table>
+              </td>
+          </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

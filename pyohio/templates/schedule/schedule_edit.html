@@ -42,10 +42,11 @@
     {% include "_page_title.html" %}
   {% endwith %}
 
+  <div class="row">
   {% for timetable in days %}
-    <h3>{{ timetable.day.date|date:"l, F jS" }}</h3>
     {% include "schedule/_edit_grid.html" %}
   {% endfor %}
+  </div>
 
   <form id="schedule-builder" action="." method="post" enctype="multipart/form-data">{% csrf_token %}
       {{ form.as_p }}

@@ -458,6 +458,7 @@ body.sponsorships .media p {
 }
 .calendar th {
     font-size: 20pt;
+    background: #E24C4D;
 }
 
 .calendar .odd td {
@@ -489,6 +490,9 @@ body.sponsorships .media p {
 }
 .table tbody tr td {
     border-top: none;
+}
+.table thead tr th {
+    border-bottom: none;
 }
 
 
