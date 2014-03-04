@@ -16,7 +16,7 @@
     {% box "schedule_top" %}
     {% for section in sections %}
         {% for timetable in section.days %}
-            <h2>{{ timetable.day.date|date:"l F jS, Y" }}</h2>
+            <h2>{{ timetable.day.date|date:"l, F jS" }}</h2>
             {% cache 600 "schedule-table" section.schedule.section %}
                 {% include "schedule/_grid.html" %}
                 {% with timetable.day.date.day|slugify as day %}
