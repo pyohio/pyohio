@@ -467,9 +467,15 @@ body.sponsorships .media p {
 .calendar .even td {
     background: #E24C4D;
 }
+
+.calendar td p {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
 .calendar td .title {
     font-weight: bold;
     font-size: 1.25em;
+    padding-top:10px;
 }
 .calendar td .title a {
     color: #FFF;
@@ -482,13 +488,13 @@ body.sponsorships .media p {
     text-decoration: underline;
 }
 .calendar td .end-time {
-    font-size: .8em;
+    font-size: .75em;
 }
 .calendar td .room {
     font-weight: bold;
 }
 .calendar td .speaker {
-    font-size: .8em;
+    font-size: .75em;
     text-transform: uppercase;
 }
 .calendar .edit-slot {
