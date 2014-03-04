@@ -43,7 +43,7 @@
   {% endwith %}
 
   {% for timetable in days %}
-    <h2>{{ timetable.day.date }}</h2>
+    <h3>{{ timetable.day.date|date:"l, F jS" }}</h3>
     {% include "schedule/_edit_grid.html" %}
   {% endfor %}
 
