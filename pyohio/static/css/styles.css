@@ -471,6 +471,12 @@ body.sponsorships .media p {
     font-weight: bold;
     font-size: 1.25em;
 }
+.calendar td .title a {
+    color: #FFF;
+}
+.calendar td .title a:after {
+    content: " >";
+}
 .calendar td .start-time {
     font-size: 1.25em;
     text-decoration: underline;
@@ -485,7 +491,7 @@ body.sponsorships .media p {
     font-size: .8em;
     text-transform: uppercase;
 }
-.calendar a.edit-slot {
+.calendar .edit-slot {
     color: #FFF;
 }
 .table tbody tr td {
