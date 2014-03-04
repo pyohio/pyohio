@@ -18,6 +18,7 @@
                           <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
                         </a>
                         <p class="title">{{ slot.content.title }}</p>
+                        <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
                       {% else %}
                         <a class="edit-slot" href="#"
                            data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
@@ -31,17 +32,14 @@
                       {% endif %}
                     <p class="end-time">
                     until {{ slot.end }}
-                    <span class="room">in
-                    {% for room in slot.rooms %}
-                        {{ room.name }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                    </span>
+                    {% if slot.rooms %}
+                      <span class="room">in
+                      {% for room in slot.rooms %}
+                          {{ room.name }}{% if not forloop.last %}, {% endif %}
+                      {% endfor %}
+                      </span>
+                    {% endif %}
                    </p>
-                  {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
-                   <p class="speaker">
-                      {{ slot.content.speakers|join:", " }}
-                   </p>
-                   {% endif %}
                   {% endfor %}
               </td>
           </tr>

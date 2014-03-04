@@ -16,26 +16,24 @@
                     <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
                     {% for slot in slot_group.list %}
                         {% if slot.content %}
-                            <p class="title">
-                                <a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a>
-                            </p>
+                            <p class="title"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
+                            <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
                         {% else %}
                             {% if slot.content_override.raw %}
                                 {{ slot.content_override.rendered|safe }}
                             {% else %}
                             {% endif %}
                         {% endif %}
+                      {% if slot.content or slot.content_override.raw %}
                       <p class="end-time">
-                      until {{ slot.end }}
-                      <span class="room">in
-                      {% for room in slot.rooms %}
-                          {{ room.name }}{% if not forloop.last %}, {% endif %}
-                      {% endfor %}
-                      </span>
-                     </p>
-                     {% if slot.content %}
-                     <p class="speaker">
-                        {{ slot.content.speakers|join:", " }}
+                          until {{ slot.end }}
+                          {% if slot.rooms %}
+                            <span class="room">in
+                            {% for room in slot.rooms %}
+                                {{ room.name }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                            </span>
+                          {% endif %}
                      </p>
                      {% endif %}
                     {% endfor %}

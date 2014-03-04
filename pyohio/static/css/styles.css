@@ -476,7 +476,9 @@ body.sponsorships .media p {
     font-weight: bold;
     font-size: 1.25em;
     padding-top:10px;
+    display: block;
 }
+
 .calendar td .title a {
     color: #FFF;
 }
@@ -500,6 +502,8 @@ body.sponsorships .media p {
 .calendar .edit-slot {
     color: #FFF;
 }
+
+
 .table tbody tr td {
     border-top: none;
 }
