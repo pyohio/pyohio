@@ -18,7 +18,6 @@
                           <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
                         </a>
                         <p class="title">{{ slot.content.title }}</p>
-                        <p class="speaker">{{ slot.content.speaker }}</p>
                       {% else %}
                         <a class="edit-slot" href="#"
                            data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
