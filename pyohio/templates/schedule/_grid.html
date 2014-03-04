@@ -13,7 +13,7 @@
         {% for slot_group in slots %}
             <tr class="{% cycle 'odd' 'even' %}">
                 <td>
-                    <p class="start-time">{{ slot_group.grouper|time:"H:i A" }}</p>
+                    <p class="start-time">{{ slot_group.grouper|time:"h:i A" }}</p>
                     {% for slot in slot_group.list %}
                         {% if slot.content %}
                             <p class="title"><a href="{% url 'schedule_presentation_detail' slot.content.pk %}">{{ slot.content.title }}</a></p>
