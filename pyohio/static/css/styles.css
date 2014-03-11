@@ -455,12 +455,61 @@ body.sponsorships .media p {
     font-size: 16pt;
     table-layout: fixed;
     width: 100%;
+    color: #FFF;
 }
 .calendar th {
     font-size: 20pt;
+    background: #E24C4D;
+}
+
+.calendar .odd td {
+    background: #FD5555;
+}
+.calendar .even td {
+    background: #E24C4D;
+}
+
+.calendar td p {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 .calendar td .title {
     font-weight: bold;
+    font-size: 1.25em;
+    padding-top:10px;
+    display: block;
+}
+
+.calendar td .title a {
+    color: #FFF;
+}
+.calendar td .title a:after {
+    content: " >";
+}
+.calendar td .start-time {
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+.calendar td .end-time {
+    font-size: .75em;
+}
+.calendar td .room {
+    font-weight: bold;
+}
+.calendar td .speaker {
+    font-size: .75em;
+    text-transform: uppercase;
+}
+.calendar .edit-slot {
+    color: #FFF;
+}
+
+
+.table tbody tr td {
+    border-top: none;
+}
+.table thead tr th {
+    border-bottom: none;
 }
 
 

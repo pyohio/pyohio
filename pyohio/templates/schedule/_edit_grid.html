@@ -1,43 +1,49 @@
-<table class="calendar table table-bordered table-condensed">
-  <thead>
-    <tr>
-      <th class="time">&nbsp;</th>
-      {% for room in timetable.rooms %}
-        <th>{{ room.name }}</th>
+{% regroup timetable.slots_qs by start as slots %}
+<div class="col-md-6">
+  <table class="calendar table">
+      <thead>
+          <tr>
+              <th>{{ timetable.day.date|date:"l, F jS" }}</th>
+          </tr>
+      </thead>
+    <tbody>
+      {% for slot_group in slots %}
+          <tr class="{% cycle 'odd' 'even' %}">
+              <td>
+                  <p class="start-time">{{ slot_group.grouper|time:"h:i A" }}</p>
+                  {% for slot in slot_group.list %}
+                      {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
+                        <a class="edit-slot" href="#"
+                           data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+                          <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
+                        </a>
+                        <p class="title">{{ slot.content.title }}</p>
+                        <p class="speaker">{{ slot.content.speakers|join:", " }}</p>
+                      {% else %}
+                        <a class="edit-slot" href="#"
+                           data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                        {% if slot.content_override.raw %}
+                          {{ slot.content_override.rendered|safe }}
+                        {% else %}
+                          {{ slot.kind.label }}
+                        {% endif %}
+                      {% endif %}
+                    <p class="end-time">
+                    until {{ slot.end }}
+                    {% if slot.rooms %}
+                      <span class="room">in
+                      {% for room in slot.rooms %}
+                          {{ room.name }}{% if not forloop.last %}, {% endif %}
+                      {% endfor %}
+                      </span>
+                    {% endif %}
+                   </p>
+                  {% endfor %}
+              </td>
+          </tr>
       {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for row in timetable %}
-      <tr>
-        <td class="time">{{ row.time|date:"h:iA" }}</td>
-        {% for slot in row.slots %}
-        <td class="slot slot-{{ slot.kind.label }}"
-            colspan="{{ slot.colspan }}" rowspan="{{ slot.rowspan }}">
-          {% if slot.kind.label == "talk" or slot.kind.label == "tutorial" %}
-            <a class="edit-slot" href="#"
-               data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-              <i class="fa {% if not slot.content %}fa-plus-circle{% else %}fa-edit{% endif %}"></i>
-            </a>
-            <p class="title">{{ slot.content.title }}</p>
-            <p class="speaker">{{ slot.content.speaker }}</p>
-          {% else %}
-            <a class="edit-slot" href="#"
-               data-action="{% url 'schedule_slot_edit' schedule.section.slug slot.pk %}">
-              <i class="fa fa-edit"></i>
-            </a>
-            {% if slot.content_override.raw %}
-              {{ slot.content_override.rendered|safe }}
-            {% else %}
-              {{ slot.kind.label }}
-            {% endif %}
-          {% endif %}
-        </td>
-        {% endfor %}
-        {% if forloop.last %}
-          <td colspan="{{ timetable.rooms|length }}"></td>
-        {% endif %}
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
