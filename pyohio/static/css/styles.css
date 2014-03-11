@@ -254,7 +254,7 @@ a:hover {
     color:#fff;
     padding-top:40px;
     text-align:center;
-    background: #ff4136
+    background: #ff4136;
 }
 
 .circle .circle-headline {
@@ -276,7 +276,8 @@ a:hover {
 .circle p {
     font-size: 10pt;
     font-weight: 400;
-    line-height: 1.8em;
+    line-height: 1.6em;
+    display: block;
 }
 /*Big circle on index*/
 
@@ -481,58 +482,6 @@ body.sponsorships .media p {
         color: #ff4136;
         text-decoration: underline;
     }
-}
-
-
-
-@media (max-width: 1000px) {
-
-    /*Big circle on index*/
-    #big-circles {
-    	padding-bottom: 320px;
-    }
-    .circle {
-        width:280px;
-        height:280px;
-        border-radius:50%;
-        padding-top:40px;
-        margin: 0 auto 40px;
-        text-align:center;
-        background: #ff4136
-    }
-
-    .circle h2 {
-        font-family: 'Exo 2', sans-serif;
-        font-size: 32pt;
-    	font-weight:700;
-    	color: #fff;
-    	margin-bottom: -0.2em;
-
-    }
-
-    .circle p {
-    	font-family: 'Exo 2', sans-serif;
-        font-size: 8pt;
-    	font-weight:400;
-    	line-height: 1.4em;
-    	color: #fff;
-    }
-    /*Big circle on index*/
-
-    /*Small circle on index*/
-    .sm-circle {
-        width:160px;
-        height:160px;
-        margin: 0 20px 20px;
-        font-size: 16pt;
-        line-height: 1.0em;
-    }
-    .sm-circle img {
-        height: 14px;
-        width: 14px;
-        margin-bottom: 3px;
-    }
-    /*Small circle on index*/
 
     .navbar-header {
         float: none;
@@ -565,6 +514,67 @@ body.sponsorships .media p {
         padding-bottom: 10px;
     }
 
+    .circle {
+        width:280px;
+        height:280px;
+        border-radius:50%;
+        padding-top:40px;
+        margin: 0 auto 40px;
+        text-align:center;
+        background: #ff4136
+    }
+
+    .circle h2 {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 32pt;
+        font-weight:700;
+        color: #fff;
+        margin-bottom: -0.2em;
+
+    }
+
+    .circle p {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 8pt;
+        font-weight:400;
+        line-height: 1.4em;
+        margin-top: -10px;
+        color: #fff;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+
+    /*Big circle on index*/
+    #big-circles {
+    	padding-bottom: 320px;
+    }
+
+    
+
+
+    /*Big circle on index*/
+
+    /*Small circle on index*/
+    .sm-circle {
+        width:160px;
+        height:160px;
+        margin: 0 20px 20px;
+        font-size: 16pt;
+        line-height: 1.0em;
+    }
+
+    .sm-circle img {
+        height: 14px;
+        width: 14px;
+        margin-bottom: 3px;
+    }
+    /*Small circle on index*/
+
+    
+
 }
 
 @media (max-width: 600px) {
@@ -578,6 +588,7 @@ body.sponsorships .media p {
 
     h3 {
     	font-size: 18pt;
+        margin-bottom: 30px;
     }
 
     #homepage-headline .headline-date {
@@ -620,5 +631,13 @@ body.sponsorships .media p {
     .sponsorlogo > p {
     	color: #c0c0c0;
         height:100px;
+    }
+
+    .circle p {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 8pt;
+        font-weight:400;
+        line-height: 1.5em;
+        display: none;
     }
 }
