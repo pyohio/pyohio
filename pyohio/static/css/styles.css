@@ -218,12 +218,23 @@ ul.list li{
 }
 
 a {
-	color: #ff4136;
+    font-weight: 700;
+    color: #ff4136;
 }
 
 a:hover {
-	color: #ff4236;
-	text-decoration: underline;
+    color: #ff4236;
+    text-decoration: underline #ff4136;
+}
+
+p a {
+    font-weight: 700;
+    color: #ff4136;
+}
+
+p a:hover {
+    color: #ff4236;
+    text-decoration: underline #ff4136;
 }
 
 .text_line {
