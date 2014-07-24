@@ -27,7 +27,6 @@ def schedule_json(request):
     data = []
     for slot in slots:
         slot_data = {
-            "name": slot.content_override.raw if slot.content_override else "Slot",
             "room": ", ".join(room["name"] for room in slot.rooms.values()),
             "rooms": [room["name"] for room in slot.rooms.values()],
             "start": datetime.combine(slot.day.date, slot.start).isoformat(),
@@ -35,7 +34,8 @@ def schedule_json(request):
             "duration": duration(slot.start, slot.end),
             "kind": slot.kind.label,
             "conf_key": slot.pk,
-            "license": "CC BY",  # this should be configurable or a part of the model
+            "license": "CC BY",  # TODO: this should be configurable or a part of the model
+            "tags": "",
         }
         if hasattr(slot.content, "proposal"):
             slot_data.update({
@@ -50,6 +50,16 @@ def schedule_json(request):
                     Site.objects.get_current().domain,
                     reverse("schedule_presentation_detail", args=[slot.content.pk])
                 ),
+            })
+        else:
+            slot_data.update({
+                "name": slot.content_override.raw if slot.content_override else "Slot",
+                "authors": None,
+                "released": True,
+                "contact": None,
+                "abstract": "",
+                "description": "",
+                "conf_url": None,
             })
         data.append(slot_data)
 
