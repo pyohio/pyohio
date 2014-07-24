@@ -54,6 +54,9 @@ def schedule_json(request):
         data.append(slot_data)
 
     return HttpResponse(
-        json.dumps({'schedule': data}, default=json_serializer),
+        # TODO: json.dumps({'schedule': data}, default=json_serializer),
+        # Carl requested the above change to be reverted. He doesn't have the bandwidth
+        # to handle it the day before the conference; however, it still needs to be fixed.
+        json.dumps(data, default=json_serializer),
         content_type="application/json"
     )
