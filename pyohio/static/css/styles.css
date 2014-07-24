@@ -127,7 +127,7 @@ body.home .row h2 {
 
 .navbar-default .navbar-nav > li > a {
   	padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 0;
 	font-family: 'Exo 2', sans-serif;
 	font-weight: 900;
 	font-size: 10pt;
