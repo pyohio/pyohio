@@ -1,5 +1,6 @@
 # The key associated to your site.
-key: Y3D4C8S0C2I
+key: M1FSNQ3NTPG
+#key: Y3D4C8S0C2I
 
 # Version control system used locally for your project.
 vcs: git
@@ -9,6 +10,11 @@ runtime: python-2.7.3
 
 # This path is relative to your project root (the directory gondor.yml lives in.)
 requirements_file: requirements/base.txt
+
+# We are using Django
+framework: django
+django:
+    managepy: manage.py
 
 # Commands to be executed during deployment. These can handle migrations or
 # moving static files into place. Accepts same parameters as gondor run.
