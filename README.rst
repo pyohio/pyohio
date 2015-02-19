@@ -55,8 +55,46 @@ Run local server::
 
 For Gondor
 --------------
+Copy database instance from previous year locally::
 
-* TODO
+    gondor sqldump primary > pyohio-<year>-db.sql
+
+Copy instance variables::
+
+    gondor env:get
+
+Copy site media (user images, sponsor logos, etc.)::
+
+    scp -r <old-instance-id>@ssh.gondor.io:site_media/media /tmp/media
+
+Update site to new year::
+
+    vi gondor.yml
+
+Create new instances for the new site::
+
+    gondor create --kind=production primary
+    gondor create --kind=dev dev
+
+Deploy database dump to new year instance::
+
+    gondor manage dev database:load pyohio-<year>-db.sql 
+    gondor manage primary database:load pyohio-<year>-db.sql 
+
+Set instance variables to new year instance::
+
+    gondor end:set dev SITE_ID=2
+    ...
+    gondor env:set primary SITE_ID=3
+    ...
+
+Deploy site media::
+
+    scp -r /tmp/media <new-instance-id>@ssh.gondor.io:site_media/media
+
+Deploy code to new year instance::
+
+    gondor deploy <primary|dev> <HEAD|master|git commit id>
 
 To run tests
 ------------
