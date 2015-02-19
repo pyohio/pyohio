@@ -220,7 +220,7 @@ PROPOSAL_FORMS = {
     "open-space": "pyohio.proposals.forms.OpenSpaceProposalForm",
 }
 
-SESSION_COOKIE_NAME = "PYOHIO2014"
+SESSION_COOKIE_NAME = "PYOHIO2015"
 
 THEME_CONTACT_EMAIL = 'support@pyohio.org'
 
