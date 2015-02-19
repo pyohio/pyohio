@@ -1,14 +1,14 @@
-The PyOhio 2014 website being built by Caktus Consulting Group, based on Pinax
+The PyOhio 2015 website being built by Caktus Consulting Group, based on Pinax
 Symposion.
 
 Rather than use this as the basis for your conference site directly, you should
 instead look at https://github.com/pinax/symposion which was designed for reuse.
 
-PyOhio 2014
+PyOhio 2015
 ============
 
-PyOhio 2014 is built on top of Pinax Symposion but may have customizations that
-will may make things more difficult for you.
+PyOhio 2015 is built on top of Pinax Symposion but may have customizations that
+may make things more difficult for you.
 
 To get running locally
 ----------------------
@@ -39,7 +39,7 @@ Exit the virtualenv and reactivate it to activate the settings just changed::
 
 Setup the postgres database and load fixtures::
 
-    createdb pyohio2014
+    createdb pyohio2015
     python manage.py syncdb
     python manage.py migrate
     python manage.py loaddata fixtures/*
