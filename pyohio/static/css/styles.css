@@ -98,7 +98,7 @@ body.home .row h2 {
     font-weight: 400;
     line-height: 1.4em;
     margin-bottom: 0px;
-    padding-top: 2.4em;
+    padding-top: 1.2em;
 }
 
 .index-p {
@@ -242,14 +242,14 @@ p a:hover {
 }
 
 .padding80pxtb {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 	padding-left: 15px;
 }
 
 .padding40pxtb {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 15px;
 }
 
@@ -671,8 +671,8 @@ body.sponsorships .media p {
     }
 
     .padding80pxtb {
-    	padding-top: 40px;
-    	padding-bottom: 40px;
+    	padding-top: 20px;
+    	padding-bottom: 20px;
     }
 
     /*Small circle on index*/
