@@ -90,7 +90,7 @@ Set instance variables to new year instance::
 
 Deploy site media::
 
-    scp -r /tmp/media <new-instance-id>@ssh.gondor.io:site_media/media
+    scp -r /tmp/media/* <new-instance-id>@ssh.gondor.io:site_media/media
 
 Deploy code to new year instance::
 
