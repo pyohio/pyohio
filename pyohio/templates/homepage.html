@@ -19,6 +19,14 @@
       <h1>{{ SITE_NAME }}</h1>
       <div class="headline-date">August 1-2, 2015</div>
       {% box "homepage_slogan" %}
+      {% box "homepage_previously" %}
+      <ul class="list-inline">
+        <li><a href="http://pyvideo.org/category/52/pyohio-2014"><h3>2014 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+        <li><a href="http://pyvideo.org/category/41/pyohio-2013"><h3>2013 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+        <li><a href="http://pyvideo.org/category/22/pyohio-2012"><h3>2012 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+        <li><a href="http://pyvideo.org/category/12/pyohio-2011"><h3>2011 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+        <li><a href="http://pyvideo.org/category/11/pyohio-2010"><h3>2010 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
+      </ul>
     </div>
 
     <!-- diamond -->
@@ -136,18 +144,6 @@
         <h2>PyKids</h2>
         {% box "homepage_pykids" %}
         <a href="{% url "cms_page" "young-coders/" %}"><h3>Find Out More <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 index-p">
-        <h2>Previously...</h2>
-        {% box "homepage_previously" %}
-        <ul class="list-inline">
-          <li><a href="http://pyvideo.org/category/52/pyohio-2014"><h3>2014 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
-          <li><a href="http://pyvideo.org/category/41/pyohio-2013"><h3>2013 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
-          <li><a href="http://pyvideo.org/category/22/pyohio-2012"><h3>2012 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
-          <li><a href="http://pyvideo.org/category/12/pyohio-2011"><h3>2011 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
-          <li><a href="http://pyvideo.org/category/11/pyohio-2010"><h3>2010 <img src="{% static 'images/caret-red.svg' %}" alt="caret icon" width=30 height=25></h3></a></li>
-        </ul>
       </div>
     </div>
   </div>
