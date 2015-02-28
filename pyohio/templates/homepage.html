@@ -52,21 +52,6 @@
   <div class="col-xs-12 col-sm-12 index-p">
     <h2>Sponsors</h2>
 
-    {% sponsor_levels as levels %}
-    {% for level in levels %}
-      {% for sponsor in level.sponsors %}
-        {% if sponsor.website_logo %}
-        <div class="col-xs-12 col-sm-3">
-          <div class="sponsorlogo">
-            {% if sponsor.external_url %}<a href="{{ sponsor.external_url }}">{% endif %}
-              <img src="{% thumbnail sponsor.website_logo "150x80" %}"
-                    alt="{{ sponsor.name }}" />
-            {% if sponsor.external_url %}</a>{% endif %}
-          </div>
-        </div>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
   </div>
 </div>
 <!-- /sponsors -->
