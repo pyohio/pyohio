@@ -224,7 +224,7 @@ a {
 }
 
 a:hover {
-    color: #ff4236;
+    color: #157B2A;
     text-decoration: underline #27590A;
 }
 
@@ -234,7 +234,7 @@ p a {
 }
 
 p a:hover {
-    color: #ff4236;
+    color: #157B2A;
     text-decoration: underline #27590A;
 }
 
@@ -469,14 +469,14 @@ body.sponsorships .media p {
 }
 .calendar th {
     font-size: 20pt;
-    background: #E24C4D;
+    background: #27590A;
 }
 
 .calendar .odd td {
     background: #FD5555;
 }
 .calendar .even td {
-    background: #E24C4D;
+    background: #27590A;
 }
 
 .calendar td p {
