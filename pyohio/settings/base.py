@@ -217,6 +217,7 @@ SYMPOSION_PAGE_REGEX = r"(([\w-]{1,})(/[\w-]{1,})*)/"
 PROPOSAL_FORMS = {
     "tutorial": "pyohio.proposals.forms.TutorialProposalForm",
     "talk": "pyohio.proposals.forms.TalkProposalForm",
+    "short_talk": "pyohio.proposals.forms.TalkProposalForm",
     "open-space": "pyohio.proposals.forms.OpenSpaceProposalForm",
 }
 
