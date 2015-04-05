@@ -1,14 +1,39 @@
+We want help with the website for PyOhio 2015
+=============================================
+
+We're using github to track the code and the list of issues <here `https://github.com/pyohio/pyohio/issues`>_.
+
+If you can help, please follow this process:
+
+1.  Read over the issues.  if you see one you want to work on, comment
+on the issue, saying "I'll take this" or something to that effect.  For
+extra credit, discuss your approach.
+
+2.  Fork the repository.
+
+3.  Fix it!  No, there's no awesome set of unit tests, but thanks for
+asking, and I agree, that would be really nice :)
+
+4.  Send us a pull request.
+
+5.  We'll review and merge and then close the issue.
+
+In step 1, if you see that somebody else already started work on the
+issue you are interested in, that's great!  Clone or fork their forked
+repository, and then help them out.  Working with internet strangers is
+a great way to make new friends.
 The PyOhio 2015 website being built by Caktus Consulting Group, based on Pinax
 Symposion.
 
-Rather than use this as the basis for your conference site directly, you should
-instead look at https://github.com/pinax/symposion which was designed for reuse.
+Rather than use this as the basis for your conference site directly, you
+should instead look at https://github.com/pinax/symposion which was
+designed for reuse.
 
 PyOhio 2015
 ============
 
-PyOhio 2015 is built on top of Pinax Symposion but may have customizations that
-may make things more difficult for you.
+PyOhio 2015 is built on top of Pinax Symposion but may have
+customizations that may make things more difficult for you.
 
 To get running locally
 ----------------------
@@ -78,8 +103,8 @@ Create new instances for the new site::
 
 Deploy database dump to new year instance::
 
-    gondor manage dev database:load pyohio-<year>-db.sql 
-    gondor manage primary database:load pyohio-<year>-db.sql 
+    gondor manage dev database:load pyohio-<year>-db.sql
+    gondor manage primary database:load pyohio-<year>-db.sql
 
 Set instance variables to new year instance::
 
