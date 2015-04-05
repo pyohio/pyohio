@@ -7,13 +7,13 @@ We're using github to track the code and the list of issues
 If you can help, please follow this process:
 
 1.  Read over the issues.  if you see one you want to work on, comment
-on the issue, saying "I'll take this" or something to that effect.  For
-extra credit, discuss your approach.
+    on the issue, saying "I'll take this" or something to that effect.
+    For extra credit, discuss your approach.
 
 2.  Fork the repository.
 
 3.  Fix it!  No, there's no awesome set of unit tests, but thanks for
-asking, and I agree, that would be really nice :)
+    asking, and I agree, that would be really nice :)
 
 4.  Send us a pull request.
 
@@ -23,6 +23,7 @@ In step 1, if you see that somebody else already started work on the
 issue you are interested in, that's great!  Clone or fork their forked
 repository, and then help them out.  Working with internet strangers is
 a great way to make new friends.
+
 The PyOhio 2015 website being built by Caktus Consulting Group, based on Pinax
 Symposion.
 
