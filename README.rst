@@ -1,7 +1,8 @@
 We want help with the website for PyOhio 2015
 =============================================
 
-We're using github to track the code and the list of issues <here `https://github.com/pyohio/pyohio/issues`>_.
+We're using github to track the code and the list of issues
+`here <https://github.com/pyohio/pyohio/issues>`_.
 
 If you can help, please follow this process:
 
