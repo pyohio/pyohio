@@ -30,7 +30,7 @@ anything.
 
 ``base`` has some minimal, conservative settings:
 
-* Database is "pyohio2014" using Postgres.
+* Database is "pyohio" using Postgres.
 * DEBUG is False.
 * SECRET_KEY is not set.
 
