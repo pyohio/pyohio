@@ -66,7 +66,7 @@ Exit the virtualenv and reactivate it to activate the settings just changed::
 
 Setup the postgres database and load fixtures::
 
-    createdb pyohio2015
+    createdb pyohio
     python manage.py syncdb
     python manage.py migrate
     python manage.py loaddata fixtures/*
