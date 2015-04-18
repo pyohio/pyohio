@@ -128,4 +128,4 @@ To run tests
 
 ::
 
-    python manage.py test pyhio
+    python manage.py test pyohio
