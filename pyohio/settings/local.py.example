@@ -1,5 +1,10 @@
 from .dev import *
 
+# Set conference_id to 1 locally, since the value of 2 set in base.py does not exist
+# in our fixtures. If we don't set this to a value that exists, we get some confusing
+# query errors, both in test, and when loading pages.
+CONFERENCE_ID = 1
+
 # Uncomment to install debug_toolbar
 #INSTALLED_APPS.append('debug_toolbar')
 #MIDDLEWARE_CLASSES.append('debug_toolbar.middleware.DebugToolbarMiddleware')

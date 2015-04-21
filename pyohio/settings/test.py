@@ -22,6 +22,9 @@ SECRET_KEY = env_or_default('SECRET_KEY', u'dipps!+sq49#e2k#5^@4*^qn#8s83$kawqqx
 # with its current schema
 SOUTH_TESTS_MIGRATE = False
 
+# Set conference_id to 1, since we're testing against fixtures.
+CONFERENCE_ID = 1
+
 # Using sqlite in memory speeds things up even more, but that's getting
 # pretty far from production. I don't think it's worth the risk.
 # DATABASES = {
