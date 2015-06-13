@@ -33,6 +33,7 @@ minus_1_votes as
 agg_score as
 (
     select proposal_id,
+    count(*) as total_votes,
     sum(
         case when vote = '+1' then 1
         when vote = '+0' then 0
@@ -43,11 +44,20 @@ agg_score as
     group by proposal_id
 )
 
-select ppb.id,
+select
+ppb.id,
 ppb.title,
 agg_score.agg_score,
-ppk.name,
-spkr.name,
+agg_score.total_votes,
+ppk.name as kind_of_talk,
+
+case
+when ppk.name = 'Short Talk (20 minutes)' then 0.5
+when ppk.name = 'Talk (40 minutes)' then 1.0
+when ppk.name = 'Tutorial (110 minutes)' then 2.0
+end as talk_length,
+
+spkr.name as speaker,
 coalesce(plus_1_votes.count, 0) as plus_1_votes,
 coalesce(plus_0_votes.count, 0) as plus_0_votes,
 coalesce(minus_0_votes.count, 0) as minus_0_votes,
@@ -76,4 +86,6 @@ on ppb.id = minus_1_votes.proposal_id
 left join agg_score
 on ppb.id = agg_score.proposal_id
 
-order by 6 desc, 3, 4
+where ppk.name != 'Open Space'
+
+order by 8 desc, 3, 4

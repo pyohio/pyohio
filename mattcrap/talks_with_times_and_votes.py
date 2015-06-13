@@ -24,7 +24,7 @@ def dump_to_csv(pgconn):
 
     cursor.copy_expert(
         copy_query,
-        open("/tmp/proposals.csv", "w"))
+        open("/var/pyohio2015/proposals.csv", "w"))
 
 if __name__ == "__main__":
 

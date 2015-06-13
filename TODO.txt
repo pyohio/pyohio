@@ -21,15 +21,19 @@ Sooner
 *   Make some postgresql views that can be easily dumped to CSV files
     that can be accessed from the site.
 
-    Could use triggers on underlying tables, or listen/notify, or a cron
-    job.
+    We could use triggers on underlying tables, or listen/notify, or a
+    cron job.
 
+*   Make it easy for people to describe scheduling preferences and hard
+    limits.
 
 
 Later
 =====
 
 *   Rewrite the database to be less ridiculous.
+
+
 
 
 
