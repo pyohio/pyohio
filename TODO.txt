@@ -1,0 +1,37 @@
++++++++++++
+Stuff to do
++++++++++++
+
+This is Matt's opinionated list, not something official.
+
+Sooner
+======
+
+*   Show the length of talks on the site on the review page and
+    elsewhere
+
+*   Make it easy for submitters to cancel their submission through the
+    site
+
+*   Add some talk statuses like "confirmed for standby" and "confirmed
+    for accepted".
+
+*   Make it easy for admin team to cancel a submission.
+
+*   Make some postgresql views that can be easily dumped to CSV files
+    that can be accessed from the site.
+
+    Could use triggers on underlying tables, or listen/notify, or a cron
+    job.
+
+
+
+Later
+=====
+
+*   Rewrite the database to be less ridiculous.
+
+
+
+
+.. vim: set syntax=rst:

@@ -24,8 +24,8 @@ issue you are interested in, that's great!  Clone or fork their forked
 repository, and then help them out.  Working with internet strangers is
 a great way to make new friends.
 
-The PyOhio 2015 website being built by Caktus Consulting Group, based on Pinax
-Symposion.
+The PyOhio 2015 website being built by Caktus Consulting Group, based on
+Pinax Symposion.
 
 Rather than use this as the basis for your conference site directly, you
 should instead look at https://github.com/pinax/symposion which was
@@ -80,6 +80,13 @@ Run local server::
 
     python manage.py runserver
 
+Here's how to get a local copy of the database::
+
+    $ gondor sqldump primary > /tmp/pyohio2015.pg_dump
+    $ dropdb pyohio2015
+    $ createdb pyohio2015
+    $ psql pyohio2015 < /tmp/pyohio2015.pg_dump
+
 For Gondor
 --------------
 Copy database instance from previous year locally::
@@ -129,3 +136,6 @@ To run tests
 ::
 
     python manage.py test pyohio
+
+
+
