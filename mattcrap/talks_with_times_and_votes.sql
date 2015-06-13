@@ -1,3 +1,5 @@
+-- Show the current status of the talk.
+
 with plus_1_votes as
 (
     select proposal_id, count(*)
@@ -18,7 +20,7 @@ minus_0_votes as
 (
     select proposal_id, count(*)
     from reviews_latestvote
-    where vote = '-0'
+    where vote = '−0'
     group by proposal_id
 ),
 
@@ -26,7 +28,7 @@ minus_1_votes as
 (
     select proposal_id, count(*)
     from reviews_latestvote
-    where vote = '-1'
+    where vote = '−1'
     group by proposal_id
 ),
 
@@ -61,7 +63,9 @@ spkr.name as speaker,
 coalesce(plus_1_votes.count, 0) as plus_1_votes,
 coalesce(plus_0_votes.count, 0) as plus_0_votes,
 coalesce(minus_0_votes.count, 0) as minus_0_votes,
-coalesce(minus_1_votes.count, 0) as minus_1_votes
+coalesce(minus_1_votes.count, 0) as minus_1_votes,
+
+rpr.status
 
 from proposals_proposalbase ppb
 
@@ -86,6 +90,12 @@ on ppb.id = minus_1_votes.proposal_id
 left join agg_score
 on ppb.id = agg_score.proposal_id
 
+left join reviews_proposalresult rpr
+on ppb.id = rpr.proposal_id
+
 where ppk.name != 'Open Space'
 
-order by 8 desc, 3, 4
+and rpr.status != 'rejected'
+
+order by 8 desc, 3 desc, 4 desc
+

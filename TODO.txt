@@ -2,7 +2,8 @@
 Stuff to do
 +++++++++++
 
-This is Matt's opinionated list, not something official.
+This is Matt's opinionated list, not something official. You do what you
+want.
 
 Sooner
 ======
@@ -24,8 +25,8 @@ Sooner
     We could use triggers on underlying tables, or listen/notify, or a
     cron job.
 
-*   Make it easy for people to describe scheduling preferences and hard
-    limits.
+*   Make it easy for talk submitters to describe scheduling preferences
+    and hard limits.
 
 
 Later
@@ -33,7 +34,8 @@ Later
 
 *   Rewrite the database to be less ridiculous.
 
-
+*   Replace +1, +0, -0, -1 with some far more obvious.  Probably just
+    VOTE or PASS
 
 
 
