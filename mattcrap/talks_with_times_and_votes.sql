@@ -1,4 +1,6 @@
 -- Show the current status of the talk.
+create view all_proposals
+as
 
 with plus_1_votes as
 (

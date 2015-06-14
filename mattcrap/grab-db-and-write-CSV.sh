@@ -16,3 +16,4 @@ cd mattcrap
 
 /home/matt/.virtualenvs/pyohio2015/bin/python talks_with_times_and_votes.py
 
+/usr/bin/jq '.' /var/pyohio2015/proposals.json > /var/pyohio2015/pretty-proposals.json

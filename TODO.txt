@@ -8,6 +8,8 @@ want.
 Sooner
 ======
 
+*   Dump the data as JSON as well as CSV
+
 *   Show the length of talks on the site on the review page and
     elsewhere
 
@@ -28,6 +30,10 @@ Sooner
 *   Make it easy for talk submitters to describe scheduling preferences
     and hard limits.
 
+*   Show more information on the list of talks screen.  For example,
+    show the status, the count of votes, the aggregate score, etc.
+
+    And make it easy to change statuses of talks from
 
 Later
 =====

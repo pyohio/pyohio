@@ -6,19 +6,25 @@ import textwrap
 
 import psycopg2
 
-def dump_to_csv(pgconn):
+def create_view(pgconn):
 
     sql_file = os.path.join(
         os.path.dirname(__file__),
         "talks_with_times_and_votes.sql")
 
+    cursor = pgconn.cursor()
+
+    cursor.execute(open(sql_file).read())
+
+def dump_to_csv(pgconn):
+
     copy_query = textwrap.dedent("""
         copy (
-
-        {0}
+            select *
+            from all_proposals
         )
         to stdout
-        with csv header""").format(open(sql_file).read())
+        with csv header""")
 
     cursor = pgconn.cursor()
 
@@ -26,10 +32,33 @@ def dump_to_csv(pgconn):
         copy_query,
         open("/var/pyohio2015/proposals.csv", "w"))
 
+def dump_to_json(pgconn):
+
+    query = textwrap.dedent("""
+        select to_json(array_agg(ap))
+        from all_proposals ap
+        """)
+
+    cursor = pgconn.cursor()
+
+    cursor.execute(query)
+
+    outfile = open("/var/pyohio2015/proposals.json", "w")
+
+    outfile.write(",\n".join(row[0] for row in cursor))
+
+    # subprocess.check_call(["jq", "'.'", "/var/pyohio/proposals.json",
+    # ">", "/var/pyohio/pretty-proposals.json"])
+
+    outfile.close()
+
+
 if __name__ == "__main__":
 
     pgconn = psycopg2.connect(database="pyohio2015")
 
+    create_view(pgconn)
+
     dump_to_csv(pgconn)
 
-
+    dump_to_json(pgconn)
