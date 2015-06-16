@@ -8,11 +8,15 @@ import psycopg2
 
 def create_view(pgconn):
 
+    cursor = pgconn.cursor()
+
+    cursor.execute("drop view if exists all_proposals")
+
+    # It would be cooler to use pkg_resources for this.
     sql_file = os.path.join(
         os.path.dirname(__file__),
         "talks_with_times_and_votes.sql")
 
-    cursor = pgconn.cursor()
 
     cursor.execute(open(sql_file).read())
 

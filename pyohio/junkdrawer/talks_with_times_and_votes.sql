@@ -51,6 +51,20 @@ agg_score as
 select
 ppb.id,
 ppb.title,
+
+coalesce(talks.audience_level, tutorials.audience_level) as aud_level_int,
+
+case
+when coalesce(talks.audience_level, tutorials.audience_level) = 1
+then 'Novice (1)'
+
+when coalesce(talks.audience_level, tutorials.audience_level) = 2
+then 'Experienced (2)'
+
+when coalesce(talks.audience_level, tutorials.audience_level) = 3
+then 'Intermediate (3)'
+end as audience_level,
+
 spkr.name as speaker,
 case
 when ppk.name = 'Short Talk (20 minutes)' then 0.5
@@ -72,6 +86,12 @@ coalesce(minus_1_votes.count, 0) as minus_1_votes,
 rpr.status
 
 from proposals_proposalbase ppb
+
+left join proposals_talkproposal talks
+on ppb.id = talks.proposalbase_ptr_id
+
+left join proposals_tutorialproposal tutorials
+on ppb.id = tutorials.proposalbase_ptr_id
 
 join speakers_speaker spkr
 on ppb.speaker_id = spkr.id
@@ -101,5 +121,7 @@ where ppk.name != 'Open Space'
 
 and rpr.status != 'rejected'
 
-order by 5 desc, 6 desc, 8 desc
+and ppb.cancelled = false
+
+order by 7 desc, 8 desc, 10 desc
 ;
