@@ -62,3 +62,5 @@ if __name__ == "__main__":
     dump_to_csv(pgconn)
 
     dump_to_json(pgconn)
+
+    pgconn.commit()
