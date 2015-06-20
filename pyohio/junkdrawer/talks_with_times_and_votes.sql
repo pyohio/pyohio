@@ -1,4 +1,3 @@
--- Show the current status of the talk.
 create or replace view all_proposals
 as
 
@@ -46,6 +45,22 @@ agg_score as
         end) as agg_score
     from reviews_latestvote
     group by proposal_id
+),
+
+matt_vote as
+(
+    select rlv.proposal_id,
+
+    case when rlv.vote = '+1' then 1
+    when rlv.vote = '+0' then 0
+    when rlv.vote = '−0' then 0
+    when rlv.vote = '−1' then -1
+    end as matt_vote
+
+    from reviews_latestvote rlv
+    join auth_user
+    on rlv.user_id = auth_user.id
+    where auth_user.email = 'matt@tplus1.com'
 )
 
 select
@@ -83,6 +98,8 @@ coalesce(plus_0_votes.count, 0) as plus_0_votes,
 coalesce(minus_0_votes.count, 0) as minus_0_votes,
 coalesce(minus_1_votes.count, 0) as minus_1_votes,
 
+matt_vote.matt_vote,
+
 rpr.status
 
 from proposals_proposalbase ppb
@@ -116,6 +133,9 @@ on ppb.id = agg_score.proposal_id
 
 left join reviews_proposalresult rpr
 on ppb.id = rpr.proposal_id
+
+join matt_vote
+on ppb.id = matt_vote.proposal_id
 
 where ppk.name != 'Open Space'
 
