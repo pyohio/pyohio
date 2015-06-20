@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>PyOhio 2015 Proposals</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+
+</head>
+
+<body>
+
+<div id="main">
+<div class="container">
+
+<h1>PyOhio 2015 Proposals</h1>
+
+<div class="well">
+<span data-bind="text: syslog" class="small text-muted pull-right"></span>
+
+<button class="btn btn-default btn-xs"
+    data-bind="click: grab_all_proposals,
+        attr: {disabled: is_busy}">Grab / reload proposals</button>
+
+</div>
+
+<hr />
+
+<div data-bind="foreach: all_proposals">
+
+<div class="well">
+
+<span class="lead" data-bind="text: title"></span>,
+<span data-bind="text: speaker"></span>,
+<span data-bind="text: talk_length"></span> hours
+<br />
+
+<span data-bind="text: approval_rating"></span>% approval,
+<span data-bind="text: total_votes"></span> total votes
+
+</div>
+
+</div><!-- closes foreach -->
+
+
+</div><!-- closes div class="container" -->
+</div><!-- closes div class="main" -->
+
+<script type="text/javascript" src="/pyohio.js"></script>
+
+<script type="text/javascript">
+
+var pyvm;
+
+$(document).ready(function () {
+    pyvm = new PyOhioVM({});
+    ko.applyBindings(pyvm);
+    pyvm.grab_all_proposals();
+});
+
+</script>
+
+</body>
+
+</html>

@@ -6,6 +6,12 @@ import textwrap
 
 import psycopg2
 
+def set_up_args():
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("database_name")
+    return ap.parse_args()
+
 def create_view(pgconn):
 
     cursor = pgconn.cursor()
@@ -59,7 +65,9 @@ def dump_to_json(pgconn):
 
 if __name__ == "__main__":
 
-    pgconn = psycopg2.connect(database="pyohio2015")
+    args = set_up_args()
+
+    pgconn = psycopg2.connect(database=args.database_name)
 
     create_view(pgconn)
 

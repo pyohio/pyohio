@@ -14,6 +14,6 @@ cd /home/matt/checkouts/pyohio2015
 
 cd pyohio/junkdrawer
 
-/home/matt/.virtualenvs/pyohio2015/bin/python talks_with_times_and_votes.py
+/home/matt/.virtualenvs/pyohio2015/bin/python talks_with_times_and_votes.py pyohio2015
 
 /usr/bin/jq '.' /var/pyohio2015/proposals.json > /var/pyohio2015/pretty-proposals.json
