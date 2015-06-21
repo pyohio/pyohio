@@ -64,10 +64,11 @@ matt_vote as
 )
 
 select
-ppb.id,
-ppb.title,
 
-coalesce(talks.audience_level, tutorials.audience_level) as aud_level_int,
+ppb.id, --1
+ppb.title,  --2
+
+coalesce(talks.audience_level, tutorials.audience_level) as aud_level_int, --3
 
 case
 when coalesce(talks.audience_level, tutorials.audience_level) = 1
@@ -78,21 +79,21 @@ then 'Experienced (2)'
 
 when coalesce(talks.audience_level, tutorials.audience_level) = 3
 then 'Intermediate (3)'
-end as audience_level,
+end as audience_level, --4
 
-spkr.name as speaker,
+spkr.name as speaker, --5
 case
 when ppk.name = 'Short Talk (20 minutes)' then 0.5
 when ppk.name = 'Talk (40 minutes)' then 1.0
 when ppk.name = 'Tutorial (110 minutes)' then 2.0
-end as talk_length,
+end as proposal_length, --6
 
-coalesce(plus_1_votes.count, 0) as plus_1_votes,
+coalesce(plus_1_votes.count, 0) as plus_1_votes, --7
 
-100 * coalesce(plus_1_votes.count, 0) / agg_score.total_votes as approval_rating,
+100 * coalesce(plus_1_votes.count, 0) / agg_score.total_votes as approval_rating, --8
 
-agg_score.total_votes,
-agg_score.agg_score,
+agg_score.total_votes, --9
+agg_score.agg_score, --10
 ppk.name as kind_of_talk,
 coalesce(plus_0_votes.count, 0) as plus_0_votes,
 coalesce(minus_0_votes.count, 0) as minus_0_votes,
@@ -143,5 +144,42 @@ and rpr.status != 'rejected'
 
 and ppb.cancelled = false
 
-order by 7 desc, 8 desc, 10 desc
+order by 7 desc,  -- plus_1_votes
+8 desc,  -- approval rating
+matt_vote desc
 ;
+
+create or replace view each_speakers_best_proposals
+
+as
+
+select distinct on (speaker) speaker, title, id
+
+from all_proposals
+
+order by speaker,
+plus_1_votes desc,
+approval_rating desc,
+matt_vote desc
+;
+
+create or replace view top_proposals
+
+as
+
+select ap.*,
+sum(proposal_length) over (order by plus_1_votes desc, approval_rating desc, matt_vote desc, ap.title)
+as cumulative_proposal_length,
+
+rank() over (order by plus_1_votes desc, approval_rating desc, matt_vote desc, ap.title)
+
+from all_proposals ap
+
+join each_speakers_best_proposals esbp
+on ap.speaker = esbp.speaker
+and ap.id = esbp.id
+
+order by plus_1_votes desc, approval_rating desc, matt_vote desc, ap.title
+
+;
+

@@ -8,8 +8,6 @@ want.
 Sooner
 ======
 
-*   Dump the data as JSON as well as CSV
-
 *   Show the length of talks on the site on the review page and
     elsewhere
 

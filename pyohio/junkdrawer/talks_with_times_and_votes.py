@@ -12,48 +12,34 @@ def set_up_args():
     ap.add_argument("database_name")
     return ap.parse_args()
 
-def create_view(pgconn):
-
-    cursor = pgconn.cursor()
-
-    cursor.execute("drop view if exists all_proposals")
-
-    # It would be cooler to use pkg_resources for this.
-    sql_file = os.path.join(
-        os.path.dirname(__file__),
-        "talks_with_times_and_votes.sql")
-
-
-    cursor.execute(open(sql_file).read())
-
-def dump_to_csv(pgconn):
+def dump_to_csv(pgconn, table_name):
 
     copy_query = textwrap.dedent("""
         copy (
             select *
-            from all_proposals
+            from {0}
         )
         to stdout
-        with csv header""")
+        with csv header""".format(table_name))
 
     cursor = pgconn.cursor()
 
     cursor.copy_expert(
         copy_query,
-        open("/var/pyohio2015/proposals.csv", "w"))
+        open("/var/pyohio2015/{0}.csv".format(table_name), "w"))
 
-def dump_to_json(pgconn):
+def dump_to_json(pgconn, table_name):
 
     query = textwrap.dedent("""
-        select to_json(array_agg(ap))
-        from all_proposals ap
-        """)
+        select to_json(array_agg(xxx))
+        from {0} xxx
+        """.format(table_name))
 
     cursor = pgconn.cursor()
 
     cursor.execute(query)
 
-    outfile = open("/var/pyohio2015/proposals.json", "w")
+    outfile = open("/var/pyohio2015/{0}.json".format(table_name), "w")
 
     outfile.write(",\n".join(row[0] for row in cursor))
 
@@ -69,10 +55,8 @@ if __name__ == "__main__":
 
     pgconn = psycopg2.connect(database=args.database_name)
 
-    create_view(pgconn)
+    for table_name in ["all_proposals", "top_proposals",
+        "pretty_schedule", "unscheduled_proposals"]:
 
-    dump_to_csv(pgconn)
-
-    dump_to_json(pgconn)
-
-    pgconn.commit()
+        dump_to_csv(pgconn, table_name)
+        dump_to_json(pgconn, table_name)

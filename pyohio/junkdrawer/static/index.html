@@ -33,19 +33,42 @@
 
 <button class="btn btn-default btn-xs"
     data-bind="click: grab_all_proposals,
-        attr: {disabled: is_busy}">Grab / reload proposals</button>
+        attr: {disabled: is_busy}">Grab / reload all proposals</button>
+
+<button class="btn btn-default btn-xs"
+    data-bind="click: grab_top_proposals,
+        attr: {disabled: is_busy}">Grab / reload top proposals</button>
+
+<a href="/all_proposals.csv"
+    class="btn btn-default btn-xs"
+    target="_blank">CSV with all proposals</a>
+
+<a href="/top_proposals.csv"
+    class="btn btn-default btn-xs"
+    target="_blank">CSV with top proposals</a>
 
 </div>
 
 <hr />
 
-<div data-bind="foreach: all_proposals">
+<div data-bind="foreach: proposals">
 
 <div class="well">
 
-<span class="lead" data-bind="text: title"></span>,
+<span class="lead" data-bind="text: title"></span>
+<span data-bind="text: rank"></span>
+
+<a class="pull-right"
+    target="_blank"
+    data-bind="attr: {
+        href: 'http://www.pyohio.org/reviews/review/' + id + '/'},
+        text: id">
+</a>
+<br />
+
 <span data-bind="text: speaker"></span>,
-<span data-bind="text: talk_length"></span> hours
+<span data-bind="text: proposal_length"></span> hours,
+<span data-bind="text: audience_level"></span>
 <br />
 
 <span data-bind="text: approval_rating"></span>% approval,
