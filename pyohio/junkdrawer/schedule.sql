@@ -54,7 +54,7 @@ insert into schedule
 
 values
 
-('Cartoon 1 and 2', '2015-08-02 12:00', 200),
+('Cartoon 1 and 2', '2015-08-02 11:30', 200),
 
 ('Cartoon 1', '2015-08-01 10:30', 277),
 ('Cartoon 1', '2015-08-01 11:30', 231),
@@ -66,6 +66,8 @@ values
 ('Cartoon 1', '2015-08-01 17:30', 221),
 
 ('Cartoon 1', '2015-08-02 13:00', 267),
+('Cartoon 1', '2015-08-02 14:00', 303),
+
 ('Cartoon 1', '2015-08-02 15:00', 271),
 ('Cartoon 1', '2015-08-02 16:00', 208),
 
@@ -108,11 +110,10 @@ values
 
 create or replace view pretty_schedule
 as
-select tp.title, tp.speaker, sk.room, sk.start_time,
+select tp.*, sk.room, sk.start_time,
 sk.start_time + interval '1 hour' * tp.proposal_length as end_time
 from schedule sk
 join top_proposals tp
 on sk.proposal_id = tp.id
 order by case when room = 'Cartoon 1' then 1 when room = 'Cartoon 2' then 2 when room = 'Hays Cape' then 3 else 4 end,
 start_time;
-

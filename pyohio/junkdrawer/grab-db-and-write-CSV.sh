@@ -23,3 +23,5 @@ PGOPTIONS='--client-min-messages=warning' /usr/bin/psql --pset pager=off --quiet
 -f schedule.sql
 
 /home/matt/.virtualenvs/pyohio2015/bin/python talks_with_times_and_votes.py pyohio2015
+
+

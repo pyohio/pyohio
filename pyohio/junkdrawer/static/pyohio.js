@@ -40,7 +40,7 @@ function PyOhioVM (data) {
         self.is_busy(true);
 
         return $.ajax({
-            url: "/top_proposals.json",
+            url: "/pretty_schedule.json",
             type: "GET",
             dataType: "json",
 
@@ -82,6 +82,8 @@ function Proposal (data) {
     self.total_votes = data.total_votes;
     self.approval_rating = data.approval_rating;
     self.rank = data.rank;
-
+    self.room = data.room;
+    self.start_time = data.start_time;
+    self.end_time = data.end_time;
 };
 
