@@ -40,12 +40,40 @@ function PyOhioVM (data) {
         self.is_busy(true);
 
         return $.ajax({
-            url: "/pretty_schedule.json",
+            url: "/top_proposals.json",
             type: "GET",
             dataType: "json",
 
             complete: function () {
                 self.syslog("Grabbed top proposals");
+                self.is_busy(false);
+            },
+
+            success: function (data) {
+                self.proposals(
+                    ko.utils.arrayMap(
+                        data,
+                        function (x) {
+                            x.rootvm = self;
+                            return new Proposal(x);
+                        }));
+            }
+        });
+
+    };
+
+    self.grab_scheduled_proposals = function () {
+
+        self.syslog("Grabbing scheduled proposals");
+        self.is_busy(true);
+
+        return $.ajax({
+            url: "/pretty_schedule.json",
+            type: "GET",
+            dataType: "json",
+
+            complete: function () {
+                self.syslog("Grabbed scheduled proposals");
                 self.is_busy(false);
             },
 
@@ -85,5 +113,9 @@ function Proposal (data) {
     self.room = data.room;
     self.start_time = data.start_time;
     self.end_time = data.end_time;
+
+    self.pretty_start_time = new moment(self.start_time).format("ddd, h:mm A");
+    self.pretty_end_time = new moment(self.end_time).format("ddd, h:mm A");
+
 };
 

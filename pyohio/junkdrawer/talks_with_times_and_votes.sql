@@ -99,7 +99,7 @@ coalesce(plus_0_votes.count, 0) as plus_0_votes,
 coalesce(minus_0_votes.count, 0) as minus_0_votes,
 coalesce(minus_1_votes.count, 0) as minus_1_votes,
 
-matt_vote.matt_vote,
+coalesce(matt_vote.matt_vote, 0) as matt_vote,
 
 rpr.status
 
@@ -135,7 +135,7 @@ on ppb.id = agg_score.proposal_id
 left join reviews_proposalresult rpr
 on ppb.id = rpr.proposal_id
 
-join matt_vote
+left join matt_vote
 on ppb.id = matt_vote.proposal_id
 
 where ppk.name != 'Open Space'

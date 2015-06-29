@@ -19,6 +19,12 @@
 <script type="text/javascript"
     src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
 
+<script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+
+<script type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js"></script>
+
 </head>
 
 <body>
@@ -32,8 +38,8 @@
 <span data-bind="text: syslog" class="small text-muted pull-right"></span>
 
 <button class="btn btn-default btn-xs"
-    data-bind="click: grab_all_proposals,
-        attr: {disabled: is_busy}">Grab / reload all proposals</button>
+    data-bind="click: grab_scheduled_proposals,
+        attr: {disabled: is_busy}">Grab / reload scheduled proposals</button>
 
 <button class="btn btn-default btn-xs"
     data-bind="click: grab_top_proposals,
@@ -73,13 +79,12 @@
 <span data-bind="text: approval_rating"></span>% approval,
 <span data-bind="text: total_votes"></span> total votes
 
-<p>
+<p data-bind="visible: start_time">
 <span data-bind="text: room"></span>
-at
-<span data-bind="text: start_time"></span>
+<br />
+<span data-bind="text: pretty_start_time"></span>
 until
-<span data-bind="text: end_time"></span>
-.
+<span data-bind="text: pretty_end_time"></span>
 </p>
 
 </div>
@@ -99,7 +104,7 @@ var pyvm;
 $(document).ready(function () {
     pyvm = new PyOhioVM({});
     ko.applyBindings(pyvm);
-    pyvm.grab_all_proposals();
+    pyvm.grab_top_proposals();
 });
 
 </script>

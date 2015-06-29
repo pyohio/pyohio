@@ -13,7 +13,11 @@ insert into rooms (title) values
 ('Cartoon 2'),
 ('Cartoon 1 and 2'),
 ('Barbie Tootle'),
-('Hays Cape');
+('Hays Cape'),
+('Rosa Aliabouni'),
+('Suzanne Scharer'),
+('Tanya Rutner')
+;
 
 
 -- Add constraints to prevent two talks in the same room for overlapping
@@ -69,6 +73,8 @@ values
 ('Cartoon 1', '2015-08-02 14:00', 303),
 
 ('Cartoon 1', '2015-08-02 15:00', 271),
+
+-- Talk 208 would prefer to be on Saturday, not Sunday
 ('Cartoon 1', '2015-08-02 16:00', 208),
 
 ('Cartoon 2', '2015-08-01 10:30', 300),
@@ -90,7 +96,7 @@ values
 ('Hays Cape', '2015-08-01 14:00', 233),
 ('Hays Cape', '2015-08-01 15:00', 205),
 ('Hays Cape', '2015-08-01 16:00', 269),
-('Hays Cape', '2015-08-01 17:00', 212),
+('Hays Cape', '2015-08-01 17:00', 292),
 
 ('Hays Cape', '2015-08-02 13:00', 245),
 ('Hays Cape', '2015-08-02 14:00', 239),

@@ -14,14 +14,15 @@ cd /home/matt/checkouts/pyohio2015
 
 cd pyohio/junkdrawer
 
-PGOPTIONS='--client-min-messages=warning' /usr/bin/psql --pset pager=off --quiet --no-psqlrc -d pyohio2015 --single-transaction -v ON_ERROR_STOP=1 -f talks_with_times_and_votes.sql
+for script in talks_with_times_and_votes.sql schedule.sql speaker_preferences.sql
+do
+
+    PGOPTIONS='--client-min-messages=warning' /usr/bin/psql --pset pager=off --quiet --no-psqlrc -d pyohio2015 \
+    --single-transaction -v ON_ERROR_STOP=1 \
+    -f $script
+
+done
 
 /usr/bin/jq '.' /var/pyohio2015/proposals.json > /var/pyohio2015/pretty-proposals.json
 
-PGOPTIONS='--client-min-messages=warning' /usr/bin/psql --pset pager=off --quiet --no-psqlrc -d pyohio2015 \
---single-transaction -v ON_ERROR_STOP=1 \
--f schedule.sql
-
 /home/matt/.virtualenvs/pyohio2015/bin/python talks_with_times_and_votes.py pyohio2015
-
-
