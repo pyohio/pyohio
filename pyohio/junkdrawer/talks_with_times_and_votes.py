@@ -73,11 +73,11 @@ def dump_schedule_for_upload(pgconn):
         copy (
             select
             to_char(start_time, 'MM/DD/YYYY') as date,
-            to_char(start_time, 'HH24:MI PM') as time_start,
+            to_char(start_time, 'HH12:MI PM') as time_start,
 
             to_char(
                 start_time + (interval '1 hour' * proposal_length),
-                'HH24:MI PM')
+                'HH12:MI PM')
             as time_end,
 
             'talk' as kind,
