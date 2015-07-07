@@ -48,6 +48,55 @@ def dump_to_json(pgconn, table_name):
 
     outfile.close()
 
+def dump_schedule_for_upload(pgconn):
+
+    """
+    Dump out a CSV that looks like this:
+
+    "date","time_start","time_end","kind"," room "
+    "12/12/2013","10:00 AM","11:00 AM","plenary","Room2"
+    "12/12/2013","10:00 AM","11:00 AM","plenary","Room1"
+    "12/12/2013","11:00 AM","12:00 PM","talk","Room1"
+    "12/12/2013","11:00 AM","12:00 PM","talk","Room2"
+    "12/12/2013","12:00 PM","12:45 PM","plenary","Room1"
+    "12/12/2013","12:00 PM","12:45 PM","plenary","Room2"
+    "12/13/2013","10:00 AM","11:00 AM","plenary","Room2"
+    "12/13/2013","10:00 AM","11:00 AM","plenary","Room1"
+    "12/13/2013","11:00 AM","12:00 PM","talk","Room1"
+    "12/13/2013","11:00 AM","12:00 PM","talk","Room2"
+    "12/13/2013","12:00 PM","12:45 PM","plenary","Room1"
+    "12/13/2013","12:00 PM","12:45 PM","plenary","Room2"
+
+    """
+
+    qry = textwrap.dedent("""
+        copy (
+            select
+            to_char(start_time, 'MM/DD/YYYY') as date,
+            to_char(start_time, 'HH24:MI PM') as time_start,
+
+            to_char(
+                start_time + (interval '1 hour' * proposal_length),
+                'HH24:MI PM')
+            as time_end,
+
+            'talk' as kind,
+
+            room
+
+            from pretty_schedule
+        )
+        to stdout
+        with csv header
+        """)
+
+    cursor = pgconn.cursor()
+
+    cursor.copy_expert(
+        qry,
+        open("/var/pyohio2015/upload.csv", "w"))
+
+
 
 if __name__ == "__main__":
 
@@ -60,3 +109,5 @@ if __name__ == "__main__":
 
         dump_to_csv(pgconn, table_name)
         dump_to_json(pgconn, table_name)
+
+    dump_schedule_for_upload(pgconn)

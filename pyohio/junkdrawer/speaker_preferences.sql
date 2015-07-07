@@ -1,7 +1,25 @@
 alter table proposals_proposalbase
-add column preferred_date date,
-add column preferred_time tstzrange,
-add column preference_notes text,
-add column confirmed_standby timestamptz,
+add column confirmed_after_first_pass timestamptz,
 add column confirmed_accepted timestamptz;
 
+create table speaker_available_times
+(
+
+    speaker_id integer not null
+    references speakers_speaker (id)
+    on delete cascade,
+
+    available_time tstzrange not null
+
+);
+
+create table speaker_preferred_times
+(
+
+    speaker_id integer not null
+    references speakers_speaker (id)
+    on delete cascade,
+
+    preferred_time tstzrange not null
+
+);
