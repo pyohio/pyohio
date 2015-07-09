@@ -1,14 +1,14 @@
 create extension if not exists "citext";
 
-drop table if exists rooms cascade;
+drop table if exists v2_rooms cascade;
 
-create table rooms
+create table v2_rooms
 (
     title citext primary key,
     description text
 );
 
-insert into rooms (title) values
+insert into v2_rooms (title) values
 ('Cartoon 1'),
 ('Cartoon 2'),
 ('Cartoon 1 and 2'),
@@ -23,14 +23,11 @@ insert into rooms (title) values
 -- Add constraints to prevent two talks in the same room for overlapping
 -- amounts of time.
 
--- One talk can be in two rooms, as long as the start and stop times are
--- the same.
-
 drop table if exists schedule cascade;
 
 create table schedule
 (
-    room citext not null references rooms (title)
+    room citext not null references v2_rooms (title)
     on delete cascade on update cascade,
 
     start_time timestamptz,
