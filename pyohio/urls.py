@@ -30,6 +30,7 @@ urlpatterns += patterns("",
     url(r"^account/", include("account.urls")),
 
     url(r"^schedule/json/$", pyohio.views.schedule_json, name="schedule_json"),
+    url(r"^sponsors/json/$", pyohio.views.sponsors_json, name="sponsors_json"),
 
     url(r"^dashboard/", symposion.views.dashboard, name="dashboard"),
     url(r"^speaker/", include("symposion.speakers.urls")),

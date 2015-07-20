@@ -6,6 +6,7 @@ from django.contrib.sites.models import Site
 from django.http import HttpResponse
 
 from symposion.schedule.models import Slot
+from symposion.sponsorship.models import Sponsor
 
 
 def json_serializer(obj):
@@ -68,5 +69,34 @@ def schedule_json(request):
         # Carl requested the above change to be reverted. He doesn't have the bandwidth
         # to handle it the day before the conference; however, it still needs to be fixed.
         json.dumps(data, default=json_serializer),
+        content_type="application/json"
+    )
+
+
+def sponsors_json(request):
+    objects = Sponsor.objects.all().filter(active=True).order_by("level")
+    sponsors = []
+    for sponsor in objects:
+
+        sponsor_benefit = sponsor.sponsor_logo
+        if sponsor_benefit and sponsor_benefit.upload:
+            logo_url = "{protocol}://{domain}{sponsor_url}".format(
+                protocol=request.META.get('HTTP_X_FORWARDED_PROTO', 'http'),
+                domain=Site.objects.get_current().domain,
+                sponsor_url=sponsor_benefit.upload.url,
+            )
+        else:
+            logo_url = ""
+
+        sponsors.append({
+            "name": sponsor.name,
+            "external_url": sponsor.external_url,
+            "level": sponsor.level.name,
+            "logo_url": logo_url,
+            "listing_text": sponsor.listing_text,
+        })
+
+    return HttpResponse(
+        json.dumps({"sponsors": sponsors}, default=json_serializer),
         content_type="application/json"
     )
