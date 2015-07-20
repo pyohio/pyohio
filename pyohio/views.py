@@ -92,6 +92,8 @@ def sponsors_json(request):
             "name": sponsor.name,
             "external_url": sponsor.external_url,
             "level": sponsor.level.name,
+            "conference": sponsor.level.conference.title,
+            "order": sponsor.level.order,
             "logo_url": logo_url,
             "listing_text": sponsor.listing_text,
         })
