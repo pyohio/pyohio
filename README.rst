@@ -45,7 +45,7 @@ PyOhio 2015 is built on top of Pinax Symposion but may have
 customizations that may make things more difficult for you.
 
 To get running locally
-----------------------
+======================
 
 This documentation assume you have the following installed::
 
@@ -95,7 +95,10 @@ Here's how to get a local copy of the database::
     $ psql pyohio2015 < /tmp/pyohio2015.pg_dump
 
 For Gondor
---------------
+==========
+
+**for glory!**
+
 Copy database instance from previous year locally::
 
     gondor sqldump primary > pyohio-<year>-db.sql
@@ -138,7 +141,7 @@ Deploy code to new year instance::
     gondor deploy <primary|dev> <HEAD|master|git commit id>
 
 To run tests
-------------
+============
 
 ::
 
@@ -151,7 +154,7 @@ How to update talks after they are added to the schedule
 Right now, if a talk is accepted, if the speaker updates their talk, the
 text on the schedule will not show those updates.
 
-There is a github issue for this here: https://github.com/pinax/symposion/issues/91
+There is a github issue for this here: https://github.com/pyohio/pyohio/issues/51
 
 In the meantime, here's how to fix this problem:
 
