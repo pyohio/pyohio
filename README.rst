@@ -1,3 +1,10 @@
+++++++
+PyOhio
+++++++
+
+.. contents::
+
+
 We want help with the website for PyOhio 2015
 =============================================
 
@@ -138,4 +145,29 @@ To run tests
     python manage.py test pyohio
 
 
+How to update talks after they are added to the schedule
+--------------------------------------------------------
+
+Right now, if a talk is accepted, if the speaker updates their talk, the
+text on the schedule will not show those updates.
+
+There is a github issue for this here: https://github.com/pinax/symposion/issues/91
+
+In the meantime, here's how to fix this problem:
+
+1.  Go to the review page for a talk and change the status from Accepted
+    to Standby.
+
+    This has a side effect of removing the talk from the schedule.
+
+2.  Immediately change the talk back from Standby to Accepted.
+
+3.  Go to the edit schedule page:
+
+        http://www.pyohio.org/schedule/talks/edit/
+
+    and then find the plus symbol where the talk used to be. Click that
+    and in the popup modal, select the talk and add it to the schedule.
+
+You have to do that every time somebody updates their proposal.
 
