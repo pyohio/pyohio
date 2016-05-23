@@ -171,6 +171,7 @@ INSTALLED_APPS = [
 
     # project
     "pyohio.proposals",
+    "pyohio.utils",
 ]
 
 FIXTURE_DIRS = [
