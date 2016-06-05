@@ -39,7 +39,7 @@ def dump_to_json(pgconn, table_name):
 
     cursor.execute(query)
 
-    outfile = open("/var/pyohio2015/{0}.json".format(table_name), "w")
+    outfile = open("/var/pyohio/{0}.json".format(table_name), "w")
 
     outfile.write(",\n".join(row[0] for row in cursor))
 
