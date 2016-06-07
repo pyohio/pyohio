@@ -50,6 +50,18 @@ where sk.room is NULL
 
 order by rank;
 
+
+create or replace view pretty_schedule
+as
+select tp.*, sk.room, sk.start_time,
+sk.start_time + interval '1 hour' * tp.proposal_length as end_time
+from schedule sk
+join top_proposals tp
+on sk.proposal_id = tp.id
+order by case when room = 'Cartoon 1' then 1 when room = 'Cartoon 2' then 2 when room = 'Hays Cape' then 3 else 4 end,
+start_time;
+
+/*
 insert into schedule
 (room, start_time, proposal_id)
 
@@ -110,13 +122,4 @@ values
 ('Barbie Tootle', '2015-08-02 16:00', 258)
 
 ;
-
-create or replace view pretty_schedule
-as
-select tp.*, sk.room, sk.start_time,
-sk.start_time + interval '1 hour' * tp.proposal_length as end_time
-from schedule sk
-join top_proposals tp
-on sk.proposal_id = tp.id
-order by case when room = 'Cartoon 1' then 1 when room = 'Cartoon 2' then 2 when room = 'Hays Cape' then 3 else 4 end,
-start_time;
+*/

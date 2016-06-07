@@ -1,10 +1,15 @@
 # vim: set expandtab ts=4 sw=4 filetype=python fileencoding=utf8:
 
 import argparse
+import logging
 import os
 import textwrap
 
 import psycopg2
+
+logging.basicConfig(level=logging.DEBUG)
+
+log = logging.getLogger("junkdrawer")
 
 def set_up_args():
 
@@ -26,7 +31,7 @@ def dump_to_csv(pgconn, table_name):
 
     cursor.copy_expert(
         copy_query,
-        open("/var/pyohio2015/{0}.csv".format(table_name), "w"))
+        open("/var/pyohio/{0}.csv".format(table_name), "w"))
 
 def dump_to_json(pgconn, table_name):
 
@@ -39,9 +44,11 @@ def dump_to_json(pgconn, table_name):
 
     cursor.execute(query)
 
+    log.debug("rows: {0}".format(cursor.rowcount))
+
     outfile = open("/var/pyohio/{0}.json".format(table_name), "w")
 
-    outfile.write(",\n".join(row[0] for row in cursor))
+    outfile.write(",\n".join(row[0] for row in cursor if row[0]))
 
     # subprocess.check_call(["jq", "'.'", "/var/pyohio/proposals.json",
     # ">", "/var/pyohio/pretty-proposals.json"])
@@ -94,7 +101,7 @@ def dump_schedule_for_upload(pgconn):
 
     cursor.copy_expert(
         qry,
-        open("/var/pyohio2015/upload.csv", "w"))
+        open("/var/pyohio/upload.csv", "w"))
 
 
 
