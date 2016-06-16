@@ -112,9 +112,9 @@ if __name__ == "__main__":
     pgconn = psycopg2.connect(database=args.database_name)
 
     for table_name in ["all_proposals", "top_proposals",
-        "pretty_schedule", "unscheduled_proposals"]:
+        ]:
 
         dump_to_csv(pgconn, table_name)
         dump_to_json(pgconn, table_name)
 
-    dump_schedule_for_upload(pgconn)
+    # dump_schedule_for_upload(pgconn)
