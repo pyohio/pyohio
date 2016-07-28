@@ -116,4 +116,4 @@ if __name__ == "__main__":
 
         print unicode(div).encode("utf-8")
 
-    # print htmlbottom
+    print htmlbottom
