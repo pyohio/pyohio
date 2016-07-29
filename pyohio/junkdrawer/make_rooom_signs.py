@@ -68,12 +68,13 @@ htmlbottom = textwrap.dedent(u"""
 html_room_tmpl = textwrap.dedent(u"""
     <div class="room-talk-time">
 
-    <img src="http://pyohio.org/site_media/static/images/py-small-logo.png" />
+    <img class="pull-right" src="http://pyohio.org/site_media/static/images/py-small-logo.png" />
 
-    <h1 class="talk-title">{talk_title}</h1>
-    <h2 class="speaker-name">{name}</h2>
-    <h2 class="room-name">{room_name}</h2>
-    <h2 class="start-time">{start_time:%A, %b %d, %Y %I:%M %P}</h2>
+    <h1 class="talk-title text-success">{talk_title}</h1>
+    <h2 class="speaker-name"><small>Speaker:</small> {name}</h2>
+    <h2 class="room-name"><small>Room:</small> {room_name}</h2>
+    <h2 class="start-time"><small>Starts:</small> {start_time:%A, %b %d, %Y %I:%M %P}</h2>
+    <h2 class="end-time"><small>Ends:</small> {end_time:%I:%M %P}</h2>
 
     </div>
     """)
@@ -83,6 +84,8 @@ def set_up_args():
     ap = argparse.ArgumentParser()
 
     ap.add_argument("csvfile")
+
+    ap.add_argument("outfile")
 
     args = ap.parse_args()
 
@@ -102,18 +105,33 @@ def yield_divs(csvfile):
             dtstr,
             "%Y-%m-%d %H:%M:%S")
 
-        row["talk_title"] = row["title"]
+        row["end_time"] = datetime.datetime.strptime(
+            "{date} {end}".format(**row),
+            "%Y-%m-%d %H:%M:%S")
 
-        yield html_room_tmpl.format(**row)
+        row["talk_title"] = row["title"].replace(u"\u2019", u"'")
+
+        div = html_room_tmpl.format(**row)
+
+        if row["name"].startswith("Philip"):
+
+            print row["title"]
+            print type(row["title"])
+            print row["talk_title"]
+            print div
+
+        yield div
 
 if __name__ == "__main__":
 
     args = set_up_args()
 
-    print htmltop
+    outfile = open(args.outfile, "w")
+
+    outfile.write(htmltop)
 
     for divnum, div in enumerate(yield_divs(args.csvfile), start=1):
 
-        print unicode(div).encode("utf-8")
+        outfile.write(unicode(div).encode("utf-8"))
 
-    print htmlbottom
+    outfile.write(htmlbottom)
