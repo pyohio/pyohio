@@ -29,6 +29,7 @@ ADMINS = [
     # ("Your Name", "your_email@domain.com"),
 ]
 
+DEFAULT_FROM_EMAIL = "PyOhio Info <info@pyohio.org>"
 MANAGERS = ADMINS
 
 DATABASES = {
