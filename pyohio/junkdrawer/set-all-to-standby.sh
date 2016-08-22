@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-ALL_PROPOSALS=`psql -d pyohio2015 -c 'select id from proposals_proposalbase where id in (select proposalbase_ptr_id from proposals_talkproposal) order by submitted desc;' -t`
+ALL_PROPOSALS=`psql -d pyohio2016 -c 'select id from proposals_proposalbase where id in (select proposalbase_ptr_id from proposals_tutorialproposal) order by submitted desc;' -t`
 
 for id in $ALL_PROPOSALS
 do
@@ -13,10 +13,10 @@ do
     -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
     -H 'Cache-Control: no-cache' \
     -H 'Referer: http://www.pyohio.org/reviews/review/226/' \
-    -H 'Cookie: PYOHIO2015=npur5hy2mqpiruqvsyyrab0hkm84dd4j; csrftoken=UBP9mT7chwUsnFpS5faXL9bUPvuAufHz'  \
+    -H 'Cookie: PYOHIO2015=kbh9mnbanx4698l7w66t1x77616awv3d; csrftoken=xNr8YibBoXzbFRiTzCQ5zJ5L1NC5F4RQ' \
     -H 'Connection: keep-alive' \
     -H 'DNT: 1' \
-    --data 'csrfmiddlewaretoken=UBP9mT7chwUsnFpS5faXL9bUPvuAufHz&result_submit=standby' \
+    --data 'csrfmiddlewaretoken=xNr8YibBoXzbFRiTzCQ5zJ5L1NC5F4RQ&result_submit=standby' \
     --compressed \
 
 done;
