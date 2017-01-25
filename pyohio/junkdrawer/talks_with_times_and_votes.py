@@ -1,10 +1,15 @@
 # vim: set expandtab ts=4 sw=4 filetype=python fileencoding=utf8:
 
 import argparse
+import logging
 import os
 import textwrap
 
 import psycopg2
+
+logging.basicConfig(level=logging.DEBUG)
+
+log = logging.getLogger("junkdrawer")
 
 def set_up_args():
 
@@ -26,7 +31,7 @@ def dump_to_csv(pgconn, table_name):
 
     cursor.copy_expert(
         copy_query,
-        open("/var/pyohio2015/{0}.csv".format(table_name), "w"))
+        open("/var/pyohio/{0}.csv".format(table_name), "w"))
 
 def dump_to_json(pgconn, table_name):
 
@@ -39,9 +44,11 @@ def dump_to_json(pgconn, table_name):
 
     cursor.execute(query)
 
-    outfile = open("/var/pyohio2015/{0}.json".format(table_name), "w")
+    log.debug("rows: {0}".format(cursor.rowcount))
 
-    outfile.write(",\n".join(row[0] for row in cursor))
+    outfile = open("/var/pyohio/{0}.json".format(table_name), "w")
+
+    outfile.write(",\n".join(row[0] for row in cursor if row[0]))
 
     # subprocess.check_call(["jq", "'.'", "/var/pyohio/proposals.json",
     # ">", "/var/pyohio/pretty-proposals.json"])
@@ -94,7 +101,7 @@ def dump_schedule_for_upload(pgconn):
 
     cursor.copy_expert(
         qry,
-        open("/var/pyohio2015/upload.csv", "w"))
+        open("/var/pyohio/upload.csv", "w"))
 
 
 
@@ -105,9 +112,9 @@ if __name__ == "__main__":
     pgconn = psycopg2.connect(database=args.database_name)
 
     for table_name in ["all_proposals", "top_proposals",
-        "pretty_schedule", "unscheduled_proposals"]:
+        ]:
 
         dump_to_csv(pgconn, table_name)
         dump_to_json(pgconn, table_name)
 
-    dump_schedule_for_upload(pgconn)
+    # dump_schedule_for_upload(pgconn)
