@@ -41,8 +41,10 @@ def schedule_json(request):
             slot_data.update({
                 "name": slot.content.title,
                 "authors": [s.name for s in slot.content.speakers()],
+                "twitters": [s.twitter_username for s in slot.content.speakers()],
                 "released": hasattr(slot.content.proposal, "recording_release") and slot.content.proposal.recording_release,
                 "contact": [s.email for s in slot.content.speakers()] if request.user.is_staff else ["redacted"],
+                "reviewers":slot.content.proposal.reviewer if request.user.is_staff else "redacted",
                 "abstract": slot.content.abstract.raw,
                 "description": slot.content.description.raw,
                 "conf_url": "%s://%s%s" % (
