@@ -24,6 +24,10 @@ class Proposal(ProposalBase):
                    "you do not agree to this, please uncheck this box."),
     )
 
+    reviewer = models.EmailField(
+            help_text=("email of a person who will be allowed to review "
+                "and approve your video details.")
+
     class Meta:
         abstract = True
 
