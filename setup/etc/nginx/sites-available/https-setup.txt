@@ -1,0 +1,6 @@
+# Follow instructions at: https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04
+
+# For auto-renew, setup root crontab with:
+
+30 2 * * 1 /usr/local/sbin/certbot-auto renew >> /var/log/le-renew.log
+35 2 * * 1 /etc/init.d/nginx reload
