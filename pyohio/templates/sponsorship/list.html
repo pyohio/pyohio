@@ -22,13 +22,16 @@
       <h3>{{ level.name }} Sponsors</h3>
 
       {% for sponsor in level.sponsors %}
-        {% if sponsor.website_logo %}
         <div class="media">
           <div class="media-image pull-left">
+          {% if sponsor.website_logo %}
             {% if sponsor.external_url %}<a href="{{ sponsor.external_url }}">{% endif %}
               <img src="{% thumbnail sponsor.website_logo "150x80" %}"
                       alt="{{ sponsor.name }}" />
             {% if sponsor.external_url %}</a>{% endif %}
+          {% else %}
+            <p>&nbsp;</p>
+          {% endif %}
           </div>
           <div class="media-body">
             <h4 class="media-heading">{{ sponsor.name }}</h4>
@@ -40,7 +43,6 @@
             {% endif %}
           </div>
         </div>
-        {% endif %}
       {% endfor %}
     {% endif %}
   {% endfor %}
