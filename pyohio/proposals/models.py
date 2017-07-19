@@ -25,8 +25,10 @@ class Proposal(ProposalBase):
     )
 
     reviewer = models.EmailField(
-            help_text=("email of a person who will be allowed to review "
-                "and approve your video details.")
+        help_text=("email of a person who will be allowed to review "
+                "and approve your video details."),
+        blank=True,
+    )
 
     class Meta:
         abstract = True
