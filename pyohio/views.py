@@ -42,6 +42,7 @@ def schedule_json(request):
                 "name": slot.content.title,
                 "authors": [s.name for s in slot.content.speakers()],
                 "twitters": [s.twitter_username for s in slot.content.speakers()],
+                "reviewer": [s.reviewer for s in slot.content.speakers()],
                 "released": hasattr(slot.content.proposal, "recording_release") and slot.content.proposal.recording_release,
                 "contact": [s.email for s in slot.content.speakers()] if request.user.is_staff else ["redacted"],
                 "reviewers":slot.content.proposal.reviewer if request.user.is_staff else "redacted",
