@@ -2,7 +2,7 @@
 
 # Django packages
 Django==1.6.2
-django-mailer==1.1
+django-mailer==1.0
 django-redis-cache==0.9.7
 metron==0.1 # 0.2.dev3
 #pinax-utils==1.0b1.dev3
